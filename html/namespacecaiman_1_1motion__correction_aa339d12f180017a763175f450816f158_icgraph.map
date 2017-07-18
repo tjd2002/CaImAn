@@ -1,0 +1,9 @@
+<map id="_upsampled_dft" name="_upsampled_dft">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1motion__correction.html#a7d2c5818773d564a27f831175498ee9a" title="motion correct many movies usingthe ipyparallel cluster " alt="" coords="171,5,331,32"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1motion__correction.html#a0700d66a3a6b2556b1c712daf9c18a9b" title="register_translation" alt="" coords="183,56,319,83"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1motion__correction.html#ac516b7c059d60b6dd4ba80de17f659bb" title="buffer_mean=np.zeros((bin_size,)+tf[0].shape).astype() template=np.mean(means_partials[:count_part],0)[ms_h:h_i&#45;ms_h,ms_w:w_i&#45;ms_w] if multicolor: buffer_mean[countbin_size]=page.asarray()[:,:,0]&#45;to_remove else: buffer_mean[countbin_size]=page.asarray()&#45;to_remove " alt="" coords="379,5,541,32"/>
+<area shape="rect" id="node5" href="$namespacecaiman_1_1motion__correction.html#a683f5ee23e529946b17f6a87ae45e0a4" title="Compute RMS error metric between src_image and target_image. " alt="" coords="402,56,518,83"/>
+<area shape="rect" id="node6" href="$namespacecaiman_1_1motion__correction.html#aea060208c09f0e4fb01e6d31b9acf36f" title="perform piecewise rigid motion correction iteration, by 1) dividing the FOV in patches 2) motion corr..." alt="" coords="401,107,519,133"/>
+<area shape="rect" id="node7" href="$namespacecaiman_1_1motion__correction.html#a88ef513cfa324fc8548e4fb46d7a67e5" title="create a matrix that is used to normalize the intersection of the stiched patches ..." alt="" coords="601,99,751,141"/>
+<area shape="rect" id="node8" href="$namespacecaiman_1_1motion__correction.html#a9c4d6e518f42c395cb58a08d2ff21f45" title="tile_and_correct_wrapper" alt="" coords="590,165,762,192"/>
+</map>

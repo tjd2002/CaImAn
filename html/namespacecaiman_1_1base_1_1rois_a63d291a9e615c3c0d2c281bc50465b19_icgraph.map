@@ -1,0 +1,5 @@
+<map id="extract_binary_masks_blob_parallel" name="extract_binary_masks_blob_parallel">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1base_1_1rois.html#a6c407af6009f8ede225fa785d6bfc040" title="Function to extract masks from data. " alt="" coords="205,39,389,65"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1base_1_1rois.html#a547c857f35b0906431911026c4cb5bff" title="Create a zip file containing ROIs for ImageJ by combining elements from a list of ROI zip files..." alt="" coords="451,5,576,32"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1base_1_1rois.html#afde6c0bad0f753a9a785404bdfda1000" title="extract_binary_masks\l_blob_parallel_place\l_holder" alt="" coords="437,56,589,112"/>
+</map>

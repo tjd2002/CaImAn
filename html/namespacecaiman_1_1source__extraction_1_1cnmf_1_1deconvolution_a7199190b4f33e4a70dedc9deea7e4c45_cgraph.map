@@ -1,0 +1,6 @@
+<map id="estimate_parameters" name="estimate_parameters">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a16b9a254776edd0d9093ee35b1ef17a2" title="Estimate noise power through the power spectral density over the range of large frequencies. " alt="" coords="411,5,471,32"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a7a73db2b3e0e88f4a5f30f80944c1319" title="Estimate AR model parameters through the autocovariance function. " alt="" coords="200,56,363,83"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a458da977dee6e97910a1b006e899b309" title="Compute the autocovariance of data at lag = &#45;maxlag:0:maxlag. " alt="" coords="413,56,470,83"/>
+<area shape="rect" id="node5" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a8d83696f273bd0121651cf48a6b899ae" title="Find exponent such that 2^exponent is equal to or greater than abs(value). " alt="" coords="521,56,599,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="register_translation" name="register_translation">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1motion__correction.html#aa339d12f180017a763175f450816f158" title="adapted from SIMA (https://github.com/losonczylab) and the scikit&#45;image (http://scikit&#45;image.org/) package. " alt="" coords="203,5,320,32"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1motion__correction.html#a09859fe5f2beba321b5397662b26651b" title="Compute global phase difference between the two images (should be zero if images are non&#45;negative)..." alt="" coords="190,56,333,83"/>
+</map>

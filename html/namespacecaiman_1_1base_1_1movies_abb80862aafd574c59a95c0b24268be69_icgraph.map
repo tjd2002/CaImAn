@@ -1,0 +1,8 @@
+<map id="_check_keys" name="_check_keys">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1base_1_1movies.html#a1dae08ecd6c4b9ef41d5e820eb86604d" title="this function should be called instead of direct spio.loadmat " alt="" coords="153,56,250,83"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1base_1_1movies.html#ad72bfc8cc5386d4470caa0be723598e9" title="sbxread" alt="" coords="311,5,380,32"/>
+<area shape="rect" id="node6" href="$namespacecaiman_1_1base_1_1movies.html#ad9b115e435b36308da1248112f09f0db" title="sbxreadskip" alt="" coords="299,56,392,83"/>
+<area shape="rect" id="node7" href="$namespacecaiman_1_1base_1_1movies.html#ade25f5174c4fa7d04d35b42a01f15803" title="sbxshape" alt="" coords="306,107,385,133"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1base_1_1movies.html#a5392a2c6b37a9407231041bee3f521a4" title="load movie from file. " alt="" coords="441,31,487,57"/>
+<area shape="rect" id="node5" href="$namespacecaiman_1_1base_1_1movies.html#a5a35758b31edb4a9b2105a058a0882a6" title="load movies from list of file names " alt="" coords="537,31,666,57"/>
+</map>

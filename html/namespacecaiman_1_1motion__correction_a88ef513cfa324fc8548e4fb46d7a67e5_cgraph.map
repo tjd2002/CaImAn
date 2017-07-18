@@ -1,0 +1,14 @@
+<map id="create_weight_matrix_for_blending" name="create_weight_matrix_for_blending">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1motion__correction.html#aef362667b31a29dfcc1a0c35c87f01ad" title="efficiently and lazily slides a window across the image " alt="" coords="385,5,497,32"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1motion__correction.html#aea060208c09f0e4fb01e6d31b9acf36f" title="perform piecewise rigid motion correction iteration, by 1) dividing the FOV in patches 2) motion corr..." alt="" coords="203,95,320,121"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1motion__correction.html#a0700d66a3a6b2556b1c712daf9c18a9b" title="register_translation" alt="" coords="373,56,509,83"/>
+<area shape="rect" id="node7" href="$namespacecaiman_1_1motion__correction.html#a54e0e94e8c54dadcad8bc6688e46c590" title="apply_shift_iteration" alt="" coords="371,107,511,133"/>
+<area shape="rect" id="node8" href="$namespacecaiman_1_1motion__correction.html#ad4fabc7e2b2082da438e99a60ca41d96" title="apply_shifts_dft" alt="" coords="384,157,499,184"/>
+<area shape="rect" id="node9" href="$namespacecaiman_1_1motion__correction.html#ab468f81cbf77caf649a1aa60b21fecdd" title="compute_flow_single\l_frame" alt="" coords="368,209,515,250"/>
+<area shape="rect" id="node5" href="$namespacecaiman_1_1motion__correction.html#aa339d12f180017a763175f450816f158" title="adapted from SIMA (https://github.com/losonczylab) and the scikit&#45;image (http://scikit&#45;image.org/) package. " alt="" coords="589,31,707,57"/>
+<area shape="rect" id="node6" href="$namespacecaiman_1_1motion__correction.html#a09859fe5f2beba321b5397662b26651b" title="Compute global phase difference between the two images (should be zero if images are non&#45;negative)..." alt="" coords="577,81,719,108"/>
+<area shape="rect" id="node10" href="$namespacecaiman_1_1motion__correction.html#a93dc0dbba76cd31384bb0fdca775fff6" title="compute_metrics_motion\l_correction" alt="" coords="563,209,733,250"/>
+<area shape="rect" id="node11" href="$namespacecaiman_1_1motion__correction.html#aa13476234008dda16f62dc69804dab54" title="Function that perform memory efficient hyper parallelized rigid motion corrections while also saving ..." alt="" coords="782,209,933,250"/>
+<area shape="rect" id="node12" href="$namespacecaiman_1_1motion__correction.html#a29956f4cd15f5c59388862472d370986" title="Function that perform memory efficient hyper parallelized rigid motion corrections while also saving ..." alt="" coords="982,209,1133,250"/>
+<area shape="rect" id="node13" href="$namespacecaiman_1_1motion__correction.html#a0609d5c64bb9cae41d945bbc89535d2a" title="motion_correction_piecewise" alt="" coords="1182,216,1375,243"/>
+</map>

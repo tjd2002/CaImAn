@@ -1,0 +1,5 @@
+<map id="update_order_greedy" name="update_order_greedy">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#ac3279e405da3b8cc2e4a21b68320971c" title="Update temporal components and background given spatial components using a block coordinate descent a..." alt="" coords="203,38,509,79"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1merging.html#ad08adf2e086a22ef379b10ed3ee36936" title="Merging of spatially overlapping components that have highly correlated temporal activity. " alt="" coords="575,5,875,46"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#a2ede407f1e0d0722f51ddb6e99f48f9f" title="necessary for parallel computation of the function constrained_foopsi " alt="" coords="558,70,893,111"/>
+</map>

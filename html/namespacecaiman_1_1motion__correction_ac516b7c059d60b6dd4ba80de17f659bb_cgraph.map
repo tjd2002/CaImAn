@@ -1,0 +1,4 @@
+<map id="process_movie_parallel" name="process_movie_parallel">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1motion__correction.html#a7d2c5818773d564a27f831175498ee9a" title="motion correct many movies usingthe ipyparallel cluster " alt="" coords="216,5,376,32"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1motion__correction.html#aa339d12f180017a763175f450816f158" title="adapted from SIMA (https://github.com/losonczylab) and the scikit&#45;image (http://scikit&#45;image.org/) package. " alt="" coords="424,5,541,32"/>
+</map>

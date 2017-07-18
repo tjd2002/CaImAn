@@ -1,0 +1,5 @@
+<map id="detect_duplicates" name="detect_duplicates">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1base_1_1rois.html#a2dd16ae2c4f6fb213f12f340bb019957" title="nf_read_roi_zip" alt="" coords="181,5,294,32"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1base_1_1rois.html#adc8128004edb81aefbc6d8ba07557414" title="distance_masks" alt="" coords="179,56,296,83"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1base_1_1rois.html#a7943f7c71c288a233576f4f83df0665e" title="points = read_roi(fileobj) " alt="" coords="345,5,434,32"/>
+</map>

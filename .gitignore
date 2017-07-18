@@ -1,0 +1,6 @@
+#####simple gitignore
+
+./*
+!html/*
+!older/*
+*.DS_Store

@@ -1,0 +1,6 @@
+<map id="compute_flow_single_frame" name="compute_flow_single_frame">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1motion__correction.html#a93dc0dbba76cd31384bb0fdca775fff6" title="compute_metrics_motion\l_correction" alt="" coords="200,5,371,46"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1motion__correction.html#aa13476234008dda16f62dc69804dab54" title="Function that perform memory efficient hyper parallelized rigid motion corrections while also saving ..." alt="" coords="419,5,570,46"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1motion__correction.html#a29956f4cd15f5c59388862472d370986" title="Function that perform memory efficient hyper parallelized rigid motion corrections while also saving ..." alt="" coords="619,5,770,46"/>
+<area shape="rect" id="node5" href="$namespacecaiman_1_1motion__correction.html#a0609d5c64bb9cae41d945bbc89535d2a" title="motion_correction_piecewise" alt="" coords="819,12,1013,39"/>
+</map>

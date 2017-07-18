@@ -1,0 +1,5 @@
+<map id="estimate_components_quality" name="estimate_components_quality">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1components__evaluation.html#ad2a8435be788c8e75130e41f884adb0f" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="235,12,387,39"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1tests_1_1comparison_1_1create__gt.html#a6d8adb7810bd5f7de466b0a661a69743" title="the function that will create a groundtruth " alt="" coords="205,63,416,105"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1components__evaluation.html#ad0d76d63424939fa0004f5cc800f0105" title="classify_components_ep" alt="" coords="464,12,632,39"/>
+</map>

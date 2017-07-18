@@ -1,0 +1,9 @@
+<map id="motion_correction_piecewise" name="motion_correction_piecewise">
+<area shape="rect" id="node2" href="$namespacecaiman_1_1motion__correction.html#a29956f4cd15f5c59388862472d370986" title="Function that perform memory efficient hyper parallelized rigid motion corrections while also saving ..." alt="" coords="249,5,399,46"/>
+<area shape="rect" id="node8" href="$namespacecaiman_1_1motion__correction.html#a9c4d6e518f42c395cb58a08d2ff21f45" title="tile_and_correct_wrapper" alt="" coords="1227,71,1399,97"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1motion__correction.html#aa13476234008dda16f62dc69804dab54" title="Function that perform memory efficient hyper parallelized rigid motion corrections while also saving ..." alt="" coords="449,5,599,46"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1motion__correction.html#a93dc0dbba76cd31384bb0fdca775fff6" title="compute_metrics_motion\l_correction" alt="" coords="648,5,819,46"/>
+<area shape="rect" id="node5" href="$namespacecaiman_1_1motion__correction.html#ab468f81cbf77caf649a1aa60b21fecdd" title="compute_flow_single\l_frame" alt="" coords="867,5,1013,46"/>
+<area shape="rect" id="node6" href="$namespacecaiman_1_1motion__correction.html#aea060208c09f0e4fb01e6d31b9acf36f" title="perform piecewise rigid motion correction iteration, by 1) dividing the FOV in patches 2) motion corr..." alt="" coords="1061,12,1179,39"/>
+<area shape="rect" id="node7" href="$namespacecaiman_1_1motion__correction.html#a88ef513cfa324fc8548e4fb46d7a67e5" title="create a matrix that is used to normalize the intersection of the stiched patches ..." alt="" coords="1239,5,1388,46"/>
+</map>
