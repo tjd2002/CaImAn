@@ -2,10 +2,11 @@ var searchData=
 [
   ['calc_5fmin',['calc_min',['../classcaiman_1_1base_1_1movies_1_1movie.html#aa86d1dcb1864827b0701c996d7956ae0',1,'caiman::base::movies::movie']]],
   ['calcavec',['calcAvec',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a14912eb4a48c8e566545bb4392341d04',1,'caiman::source_extraction::cnmf::spatial']]],
+  ['chunker',['chunker',['../namespacecaiman_1_1components__evaluation.html#a68ebc78b1982bec697fe2fd84e6f997e',1,'caiman::components_evaluation']]],
   ['classify_5fcomponents_5fep',['classify_components_ep',['../namespacecaiman_1_1components__evaluation.html#ad0d76d63424939fa0004f5cc800f0105',1,'caiman::components_evaluation']]],
-  ['cnmf',['cnmf',['../namespacecaiman_1_1tests_1_1comparison_1_1comparison.html#acdd14734a9b9a31fc4fab9e9f20ba42e',1,'caiman::tests::comparison::comparison']]],
+  ['cnmf',['cnmf',['../namespacecaiman_1_1tests_1_1comparison_1_1comparison.html#acdd14734a9b9a31fc4fab9e9f20ba42e',1,'caiman.tests.comparison.comparison.cnmf()'],['../namespacecaiman_1_1tests_1_1comparison_1_1comparisonplots.html#a4017a2dff1c3f66ffea09987389ec40f',1,'caiman.tests.comparison.comparisonplots.cnmf()']]],
   ['cnmf_5fpatches',['cnmf_patches',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce.html#af6abfd3565abe5dcb4298e6c55cac9d1',1,'caiman::source_extraction::cnmf::map_reduce']]],
-  ['cnmfsetparms',['CNMFSetParms',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#a028471071926a41801c9085bd41a530e',1,'caiman::source_extraction::cnmf::utilities']]],
+  ['cnmfsetparms',['CNMFSetParms',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#ab55e527a68e4ae02cc9ab0ebad302d7d',1,'caiman::source_extraction::cnmf::utilities']]],
   ['com',['com',['../namespacecaiman_1_1base_1_1rois.html#ae37bc9f1a4e815bd7d8e44a2334883a2',1,'caiman::base::rois']]],
   ['compute_5fevent_5fexceptionality',['compute_event_exceptionality',['../namespacecaiman_1_1components__evaluation.html#a967e8c445c84976814609f9c120153a2',1,'caiman::components_evaluation']]],
   ['compute_5fflow_5fsingle_5fframe',['compute_flow_single_frame',['../namespacecaiman_1_1motion__correction.html#ab468f81cbf77caf649a1aa60b21fecdd',1,'caiman::motion_correction']]],

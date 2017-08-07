@@ -100,8 +100,6 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:afbac1886ebb6ebc68c604795c7ae5441"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1tests_1_1comparison_1_1create__gt.html#afbac1886ebb6ebc68c604795c7ae5441">params_movie</a></td></tr>
 <tr class="separator:afbac1886ebb6ebc68c604795c7ae5441"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a938efd2a70e80470c894e4bd541a458d"><td class="memItemLeft" align="right" valign="top">dictionary&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1tests_1_1comparison_1_1create__gt.html#a938efd2a70e80470c894e4bd541a458d">params_display</a></td></tr>
-<tr class="separator:a938efd2a70e80470c894e4bd541a458d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6d8adb7810bd5f7de466b0a661a69743"></a>
@@ -125,34 +123,19 @@ Variables</h2></td></tr>
 <pre class="fragment">('we now have ground truth\n')
 
 ('we were not able to read the file to compare it\n')</pre> 
-<p class="definition">Definition at line <a class="el" href="create__gt_8py_source.html#l00158">158</a> of file <a class="el" href="create__gt_8py_source.html">create_gt.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="create__gt_8py_source.html#l00135">135</a> of file <a class="el" href="create__gt_8py_source.html">create_gt.py</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1tests_1_1comparison_1_1create__gt_a6d8adb7810bd5f7de466b0a661a69743_cgraph.svg" width="1496" height="182"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1tests_1_1comparison_1_1create__gt_a6d8adb7810bd5f7de466b0a661a69743_cgraph.svg" width="1496" height="182"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a938efd2a70e80470c894e4bd541a458d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a938efd2a70e80470c894e4bd541a458d">&#9670;&nbsp;</a></span>params_display</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">dictionary params_display</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;= {</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;        <span class="stringliteral">&#39;downsample_ratio&#39;</span>:.2,</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;        <span class="stringliteral">&#39;thr_plot&#39;</span>:0.9</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;        }</div></div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="create__gt_8py_source.html#l00140">140</a> of file <a class="el" href="create__gt_8py_source.html">create_gt.py</a>.</p>
-
-</div>
-</div>
 <a id="afbac1886ebb6ebc68c604795c7ae5441"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afbac1886ebb6ebc68c604795c7ae5441">&#9670;&nbsp;</a></span>params_movie</h2>
 
@@ -164,8 +147,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="create__gt_8py_source.html#l00056">56</a> of file <a class="el" href="create__gt_8py_source.html">create_gt.py</a>.</p>
+<b>Initial value:</b><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;=  {<span class="stringliteral">&#39;fname&#39;</span>: [<span class="stringliteral">&#39;demoMovieJ.tif&#39;</span>],</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;                <span class="stringliteral">&#39;max_shifts&#39;</span>: (2, 2),  <span class="comment"># maximum allow rigid shift (2,2)</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                <span class="stringliteral">&#39;niter_rig&#39;</span>: 1,</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                <span class="stringliteral">&#39;splits_rig&#39;</span>: 14,  <span class="comment"># for parallelization split the movies in  num_splits chuncks across time</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                <span class="stringliteral">&#39;num_splits_to_process_rig&#39;</span>: <span class="keywordtype">None</span>,  <span class="comment"># if none all the splits are processed and the movie is saved</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;                <span class="stringliteral">&#39;p&#39;</span>: 1,  <span class="comment"># order of the autoregressive system</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;                <span class="stringliteral">&#39;merge_thresh&#39;</span>: 0.8,  <span class="comment"># merging threshold, max correlation allow</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;                <span class="stringliteral">&#39;rf&#39;</span>: 15,  <span class="comment"># halfsize of the patches in pixels. rf=25, patches are 50x50    20</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;                <span class="stringliteral">&#39;stride_cnmf&#39;</span>: 6,  <span class="comment"># amounpl.it of overlap between the patches in pixels</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                <span class="stringliteral">&#39;K&#39;</span>: 5,  <span class="comment"># number of components per patch</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <span class="stringliteral">&#39;is_dendrites&#39;</span>: <span class="keyword">False</span>,  <span class="comment"># if dendritic. In this case you need to set init_method to sparse_nmf</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <span class="stringliteral">&#39;init_method&#39;</span>: <span class="stringliteral">&#39;greedy_roi&#39;</span>,</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                <span class="stringliteral">&#39;gSig&#39;</span>: [4, 4],  <span class="comment"># expected half size of neurons</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="stringliteral">&#39;alpha_snmf&#39;</span>: <span class="keywordtype">None</span>,  <span class="comment"># this controls sparsity</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="stringliteral">&#39;final_frate&#39;</span>: 10,</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="stringliteral">&#39;r_values_min_patch&#39;</span>: .7,  <span class="comment"># threshold on space consistency</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="stringliteral">&#39;fitness_min_patch&#39;</span>: -40,  <span class="comment"># threshold on time variability</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="comment"># threshold on time variability (if nonsparse activity)</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="stringliteral">&#39;fitness_delta_min_patch&#39;</span>: -40,</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="stringliteral">&#39;Npeaks&#39;</span>: 10,</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="stringliteral">&#39;r_values_min_full&#39;</span>: .85,</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="stringliteral">&#39;fitness_min_full&#39;</span>: - 50,</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="stringliteral">&#39;fitness_delta_min_full&#39;</span>: - 50,</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                <span class="stringliteral">&#39;only_init_patch&#39;</span>: <span class="keyword">True</span>,</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <span class="stringliteral">&#39;gnb&#39;</span>: 1,</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="stringliteral">&#39;memory_fact&#39;</span>: 1,</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="stringliteral">&#39;n_chunks&#39;</span>: 10</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="create__gt_8py_source.html#l00092">92</a> of file <a class="el" href="create__gt_8py_source.html">create_gt.py</a>.</p>
 
 </div>
 </div>

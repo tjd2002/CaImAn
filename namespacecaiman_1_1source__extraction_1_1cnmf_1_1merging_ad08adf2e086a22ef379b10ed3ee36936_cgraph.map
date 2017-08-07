@@ -1,7 +1,7 @@
 <map id="merge_components" name="merge_components">
 <area shape="rect" id="node2" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a0afb63d84485a181bb40f2eefe7b581e" title="Infer the most likely discretized spike train underlying a fluorescence trace. " alt="" coords="195,102,560,143"/>
 <area shape="rect" id="node13" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#ac3279e405da3b8cc2e4a21b68320971c" title="Update temporal components and background given spatial components using a block coordinate descent a..." alt="" coords="224,298,531,339"/>
-<area shape="rect" id="node20" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#ac4b406f52054893ed2518a761921d4f4" title="update spatial footprints and background through Basis Pursuit Denoising " alt="" coords="231,451,524,492"/>
+<area shape="rect" id="node20" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a9f53b6bac6a1560b0102e55a7ec1710d" title="update spatial footprints and background through Basis Pursuit Denoising " alt="" coords="231,480,524,522"/>
 <area shape="rect" id="node3" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a7199190b4f33e4a70dedc9deea7e4c45" title="Estimate noise standard deviation and AR coefficients if they are not present. " alt="" coords="1021,52,1368,94"/>
 <area shape="rect" id="node8" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a04aa84702e9977187b4ac0ba95891fb6" title="Solve the deconvolution problem using cvxopt and picos packages. " alt="" coords="623,36,958,78"/>
 <area shape="rect" id="node9" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a0dd508a8cc717626fa4c45d0a5c08bfd" title="Solves the deconvolution problem using the cvxpy package and the ECOS/SCS library. " alt="" coords="625,102,956,143"/>
@@ -22,5 +22,6 @@
 <area shape="rect" id="node22" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#aecc215caf3e87682f452e93ca491a477" title="compute the indices of the distance from the cm to search for the spatial component (calling determin..." alt="" coords="634,480,947,522"/>
 <area shape="rect" id="node24" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a894e2773dd1e79c2efac3c759ff2fe9c" title="memmap the C and Y objects in parallel " alt="" coords="1022,546,1367,573"/>
 <area shape="rect" id="node25" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a3fa5db8c88b06457233eb35dbcea3588" title="Post&#45;processing of spatial components which includes the following steps. " alt="" coords="637,598,944,639"/>
+<area shape="rect" id="node26" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#abc0875894e963dbd4b5b2adaf587421e" title="caiman.source_extraction.cnmf.spatial.\lHALS4shape_bckgrnd" alt="" coords="665,663,917,704"/>
 <area shape="rect" id="node23" href="$namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#aca0edbf4c2cd31fe1a9c228c4099a485" title="compute the indices of the distance from the cm to search for the spatial component ..." alt="" coords="1039,480,1351,522"/>
 </map>

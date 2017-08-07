@@ -104,10 +104,51 @@ Functions</h2></td></tr>
 <tr class="memitem:ad2a8435be788c8e75130e41f884adb0f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1components__evaluation.html#ad2a8435be788c8e75130e41f884adb0f">evaluate_components</a> (Y, traces, A, C, b, f, final_frate, remove_baseline=True, N=5, robust_std=False, Athresh=0.1, Npeaks=5, thresh_C=0.3)</td></tr>
 <tr class="memdesc:ad2a8435be788c8e75130e41f884adb0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a metric and order components according to the probabilty if some "exceptional events" (like a spike).  <a href="#ad2a8435be788c8e75130e41f884adb0f">More...</a><br /></td></tr>
 <tr class="separator:ad2a8435be788c8e75130e41f884adb0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57b89e19503abe333d5767d462266e7a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1components__evaluation.html#a57b89e19503abe333d5767d462266e7a">estimate_components_quality</a> (traces, Y, A, C, b, f, final_frate=30, Npeaks=10, r_values_min=.95, fitness_min=-100, fitness_delta_min=-100, return_all=False, N=5)</td></tr>
-<tr class="separator:a57b89e19503abe333d5767d462266e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ebc78b1982bec697fe2fd84e6f997e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1components__evaluation.html#a68ebc78b1982bec697fe2fd84e6f997e">chunker</a> (seq, size)</td></tr>
+<tr class="separator:a68ebc78b1982bec697fe2fd84e6f997e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc8731dfc865b4380b0e0894bbb3a34d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1components__evaluation.html#afc8731dfc865b4380b0e0894bbb3a34d">estimate_components_quality</a> (traces, Y, A, C, b, f, final_frate=30, Npeaks=10, r_values_min=.95, fitness_min=-100, fitness_delta_min=-100, return_all=False, N=5, remove_baseline=True)</td></tr>
+<tr class="memdesc:afc8731dfc865b4380b0e0894bbb3a34d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a metric and order components according to the probabilty if some "exceptional events" (like a spike).  <a href="#afc8731dfc865b4380b0e0894bbb3a34d">More...</a><br /></td></tr>
+<tr class="separator:afc8731dfc865b4380b0e0894bbb3a34d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a68ebc78b1982bec697fe2fd84e6f997e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ebc78b1982bec697fe2fd84e6f997e">&#9670;&nbsp;</a></span>chunker()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def caiman.components_evaluation.chunker </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>seq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00322">322</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a68ebc78b1982bec697fe2fd84e6f997e_cgraph.svg" width="1150" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
 <a id="ad0d76d63424939fa0004f5cc800f0105"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad0d76d63424939fa0004f5cc800f0105">&#9670;&nbsp;</a></span>classify_components_ep()</h2>
 
@@ -182,20 +223,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00168">168</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
-<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad0d76d63424939fa0004f5cc800f0105_cgraph.svg" width="1048" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00173">173</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad0d76d63424939fa0004f5cc800f0105_icgraph.svg" width="838" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad0d76d63424939fa0004f5cc800f0105_cgraph.svg" width="1048" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad0d76d63424939fa0004f5cc800f0105_icgraph.svg" width="875" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -252,26 +295,28 @@ erfc ndarray probability at each time step of observing the N consequtive actual
 <dd>
 noise_est ndarray the components ordered according to the fitness </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00092">92</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
-<div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a967e8c445c84976814609f9c120153a2_cgraph.svg" width="632" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00093">93</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a967e8c445c84976814609f9c120153a2_icgraph.svg" width="888" height="103"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a967e8c445c84976814609f9c120153a2_cgraph.svg" width="632" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a967e8c445c84976814609f9c120153a2_icgraph.svg" width="926" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a57b89e19503abe333d5767d462266e7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57b89e19503abe333d5767d462266e7a">&#9670;&nbsp;</a></span>estimate_components_quality()</h2>
+<a id="afc8731dfc865b4380b0e0894bbb3a34d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc8731dfc865b4380b0e0894bbb3a34d">&#9670;&nbsp;</a></span>estimate_components_quality()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,7 +397,13 @@ noise_est ndarray the components ordered according to the fitness </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>N</em> = <code>5</code>&#160;</td>
+          <td class="paramname"><em>N</em> = <code>5</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>remove_baseline</em> = <code>True</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -362,20 +413,45 @@ noise_est ndarray the components ordered according to the fitness </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00296">296</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a57b89e19503abe333d5767d462266e7a_cgraph.svg" width="1032" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Define a metric and order components according to the probabilty if some "exceptional events" (like a spike). </p>
+<p>Such probability is defined as the likeihood of observing the actual trace value over N samples given an estimated noise distribution. The function first estimates the noise distribution by considering the dispersion around the mode. This is done only using values lower than the mode. The estimation of the noise std is made robust by using the approximation std=iqr/1.349. Then, the probavility of having N consecutive eventsis estimated. This probability is used to order the components. The algorithm also measures the reliability of the spatial mask by comparing the filters in A with the average of the movies over samples where exceptional events happen, after removing (if possible) frames when neighboring neurons were active</p>
+<h2>Parameters </h2>
+<p>Y ndarray movie x,y,t</p>
+<p>A various types outputs of cnmf</p>
+<p>traces ndarray Fluorescence traces</p>
+<p>N int N number of consecutive events probability multiplied</p>
+<p>Npeaks int</p>
+<p>r_values_min list minimum correlation between component and spatial mask obtained by averaging important points</p>
+<p>fitness_min ndarray minimum acceptable quality of components (the lesser the better) on the raw trace</p>
+<p>fitness_delta_min ndarray minimum acceptable the quality of components (the lesser the better) on diff(trace)</p>
+<p>thresh_C float fraction of the maximum of C that is used as minimum peak height</p>
+<h2></h2>
+<dl class="section return"><dt>Returns</dt><dd>idx_components ndarray the components ordered according to the fitness</dd>
+<dd>
+idx_components_bad ndarray the components ordered according to the fitness</dd>
+<dd>
+fitness_raw ndarray value estimate of the quality of components (the lesser the better) on the raw trace</dd>
+<dd>
+fitness_delta ndarray value estimate of the quality of components (the lesser the better) on diff(trace)</dd>
+<dd>
+r_values list float values representing correlation between component and spatial mask obtained by averaging important points </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00385">385</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a57b89e19503abe333d5767d462266e7a_icgraph.svg" width="638" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_afc8731dfc865b4380b0e0894bbb3a34d_cgraph.svg" width="1032" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_afc8731dfc865b4380b0e0894bbb3a34d_icgraph.svg" width="459" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -421,13 +497,14 @@ noise_est ndarray the components ordered according to the fitness </dd></dl>
 <p>estimate the noise in the traces under assumption that signals are sparse and only positive. </p>
 <p>The last dimension should be time. </p>
 
-<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00021">21</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
-<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00022">22</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a115ea8d0f9c41cb31cb7fe05535f65f7_cgraph.svg" width="582" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_a115ea8d0f9c41cb31cb7fe05535f65f7_cgraph.svg" width="582" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -556,20 +633,22 @@ r_values list float values representing correlation between component and spatia
 <dd>
 significant_samples ndarray indexes of samples used to obtain the spatial mask by average </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00268">268</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
-<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad2a8435be788c8e75130e41f884adb0f_cgraph.svg" width="832" height="230"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00275">275</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad2a8435be788c8e75130e41f884adb0f_icgraph.svg" width="638" height="103"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad2a8435be788c8e75130e41f884adb0f_cgraph.svg" width="832" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_ad2a8435be788c8e75130e41f884adb0f_icgraph.svg" width="675" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -618,13 +697,14 @@ significant_samples ndarray indexes of samples used to obtain the spatial mask b
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00143">143</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="components__evaluation_8py_source.html#l00144">144</a> of file <a class="el" href="components__evaluation_8py_source.html">components_evaluation.py</a>.</p>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_aa88632c960b46b09e3e8d4120ac3bc16_icgraph.svg" width="1035" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1components__evaluation_aa88632c960b46b09e3e8d4120ac3bc16_icgraph.svg" width="1072" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

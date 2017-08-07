@@ -1,11 +1,12 @@
 var searchData=
 [
+  ['n_5fframes_5fper_5fbin',['n_frames_per_bin',['../namespacecaiman_1_1gui_1_1gui__pipeline.html#a9388c66ac2a36f51bbea7b6ff293d951',1,'caiman::gui::gui_pipeline']]],
   ['n_5fpixels_5fper_5fprocess',['n_pixels_per_process',['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a05566bebfdf4feaa47a25c7603646ea0',1,'caiman.source_extraction.cnmf.cnmf.CNMF.n_pixels_per_process()'],['../namespacepipeline__multifile.html#a2375521c293d295287c5623c0ab52a68',1,'pipeline_multifile.n_pixels_per_process()']]],
   ['n_5fprocesses',['n_processes',['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#afc887c81cb0ff13d5b2439525ddbdc8d',1,'caiman.source_extraction.cnmf.cnmf.CNMF.n_processes()'],['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf__optional__outputs_1_1_c_n_m_f.html#afc887c81cb0ff13d5b2439525ddbdc8d',1,'caiman.source_extraction.cnmf.cnmf_optional_outputs.CNMF.n_processes()'],['../namespacepipeline__multifile.html#afc887c81cb0ff13d5b2439525ddbdc8d',1,'pipeline_multifile.n_processes()'],['../namespace_demo_motion_correction_parallel.html#ace427208899004b9ffdbd6cd5cfa791a',1,'DemoMotionCorrectionParallel.n_processes()']]],
   ['n_5fprocesses_5fmmap',['n_processes_mmap',['../namespacepipeline__multifile.html#a224fe2d7f76c785a595e2c9d25075c0c',1,'pipeline_multifile']]],
   ['n_5fsamples_5ffitness',['N_samples_fitness',['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf__optional__outputs_1_1_c_n_m_f.html#ada3fd3986d635b03a2e849b3778fd6bf',1,'caiman::source_extraction::cnmf::cnmf_optional_outputs::CNMF']]],
   ['name',['name',['../namespacesetup.html#ab74e6bf80237ddc4109968cedc58c151',1,'setup']]],
-  ['name_5fnew',['name_new',['../namespacecaiman_1_1tests_1_1test__general.html#a6336fe291d7904b0cdfee4955c177ebd',1,'caiman.tests.test_general.name_new()'],['../namespacepipeline__multifile.html#a6336fe291d7904b0cdfee4955c177ebd',1,'pipeline_multifile.name_new()']]],
+  ['name_5fnew',['name_new',['../namespacecaiman_1_1gui_1_1gui__pipeline.html#a6336fe291d7904b0cdfee4955c177ebd',1,'caiman.gui.gui_pipeline.name_new()'],['../namespacecaiman_1_1tests_1_1test__general.html#a6336fe291d7904b0cdfee4955c177ebd',1,'caiman.tests.test_general.name_new()'],['../namespacepipeline__multifile.html#a6336fe291d7904b0cdfee4955c177ebd',1,'pipeline_multifile.name_new()']]],
   ['nb_5fimshow',['nb_imshow',['../namespacecaiman_1_1utils_1_1visualization.html#ac95a3a5e8c3bee95392831c57548fc04',1,'caiman::utils::visualization']]],
   ['nb_5fplot_5fcontour',['nb_plot_contour',['../namespacecaiman_1_1utils_1_1visualization.html#aa6b9002875d7d86524868e7d795a4f3f',1,'caiman::utils::visualization']]],
   ['nb_5fview_5fpatches',['nb_view_patches',['../namespacecaiman_1_1utils_1_1visualization.html#aa4202ac829178bc43b687c976927f108',1,'caiman::utils::visualization']]],
@@ -22,8 +23,8 @@ var searchData=
   ['nf_5fmatch_5fneurons_5fin_5fbinary_5fmasks',['nf_match_neurons_in_binary_masks',['../namespacecaiman_1_1base_1_1rois.html#a110f7c7d62671deddd9e58cc0c873a4c',1,'caiman::base::rois']]],
   ['nf_5fmerge_5froi_5fzip',['nf_merge_roi_zip',['../namespacecaiman_1_1base_1_1rois.html#a547c857f35b0906431911026c4cb5bff',1,'caiman::base::rois']]],
   ['nf_5fread_5froi',['nf_read_roi',['../namespacecaiman_1_1base_1_1rois.html#a7943f7c71c288a233576f4f83df0665e',1,'caiman::base::rois']]],
-  ['nf_5fread_5froi_5fzip',['nf_read_roi_zip',['../namespacecaiman_1_1base_1_1rois.html#a2dd16ae2c4f6fb213f12f340bb019957',1,'caiman::base::rois']]],
-  ['niter_5frig',['niter_rig',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#a622d22b8e41ec1471dbd82d5c036db49',1,'caiman::motion_correction::MotionCorrect']]],
+  ['nf_5fread_5froi_5fzip',['nf_read_roi_zip',['../namespacecaiman_1_1base_1_1rois.html#a9c5a9463f0aa19a2b004192adff1e5fe',1,'caiman::base::rois']]],
+  ['niter_5frig',['niter_rig',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#a622d22b8e41ec1471dbd82d5c036db49',1,'caiman.motion_correction.MotionCorrect.niter_rig()'],['../namespacecaiman_1_1gui_1_1gui__pipeline.html#a619e9d6c99cf85472836896bede3dbbd',1,'caiman.gui.gui_pipeline.niter_rig()']]],
   ['nnls_5fl0',['nnls_L0',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a86e3328b66dc7efa75c0646f02815ab4',1,'caiman::source_extraction::cnmf::spatial']]],
   ['none',['None',['../namespace_none.html',1,'None'],['../namespacepipeline__multifile.html#ac7485dcc8d256a6f197ed7802687f252',1,'pipeline_multifile.None()'],['../namespace_demo_motion_correction_parallel.html#ac7485dcc8d256a6f197ed7802687f252',1,'DemoMotionCorrectionParallel.None()']]],
   ['nonneg_5fmovie',['nonneg_movie',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#a5369a195108c8863c09409a44a883750',1,'caiman::motion_correction::MotionCorrect']]],
@@ -31,10 +32,10 @@ var searchData=
   ['norm',['norm',['../classcaiman_1_1base_1_1movies_1_1movie.html#a02e2c2323d0468cbd6ebff344161c0e2',1,'caiman::base::movies::movie']]],
   ['normalize_5fcomponents',['normalize_components',['../namespacecaiman_1_1behavior_1_1behavior.html#ac7ebff37cde3a2bef4c8613654b60395',1,'caiman::behavior::behavior']]],
   ['normalize_5finit',['normalize_init',['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#ad53e625efeb607367fc77c327127bdaf',1,'caiman::source_extraction::cnmf::cnmf::CNMF']]],
-  ['npeaks',['Npeaks',['../namespacecaiman_1_1tests_1_1test__general.html#af72bfcf99a3c9871106a5638369f29d7',1,'caiman.tests.test_general.Npeaks()'],['../namespacepipeline__multifile.html#a7bb57f58b4fb7867836c48a25af7155f',1,'pipeline_multifile.Npeaks()']]],
+  ['npeaks',['Npeaks',['../namespacecaiman_1_1gui_1_1gui__pipeline.html#af72bfcf99a3c9871106a5638369f29d7',1,'caiman.gui.gui_pipeline.Npeaks()'],['../namespacecaiman_1_1tests_1_1test__general.html#af72bfcf99a3c9871106a5638369f29d7',1,'caiman.tests.test_general.Npeaks()'],['../namespacepipeline__multifile.html#a7bb57f58b4fb7867836c48a25af7155f',1,'pipeline_multifile.Npeaks()']]],
   ['num_5fiter',['num_iter',['../namespacepipeline__multifile.html#aec2269ddcef2faf5f35a7257ba3b8f0b',1,'pipeline_multifile']]],
   ['num_5fsplits_5fto_5fprocess',['num_splits_to_process',['../namespacepipeline__multifile.html#ab600c74a9b0d7d7eb9b4e788af4d5eaa',1,'pipeline_multifile']]],
   ['num_5fsplits_5fto_5fprocess_5fels',['num_splits_to_process_els',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#a4cfdc0291fc31008675ce8dc73a978a8',1,'caiman::motion_correction::MotionCorrect']]],
   ['num_5fsplits_5fto_5fprocess_5flist',['num_splits_to_process_list',['../namespacepipeline__multifile.html#ae7d7b66e6a92a392a004dc8b3ee98bb2',1,'pipeline_multifile']]],
-  ['num_5fsplits_5fto_5fprocess_5frig',['num_splits_to_process_rig',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#ad0d844b215dbcf6c8ef60c6d73772cad',1,'caiman::motion_correction::MotionCorrect']]]
+  ['num_5fsplits_5fto_5fprocess_5frig',['num_splits_to_process_rig',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#ad0d844b215dbcf6c8ef60c6d73772cad',1,'caiman.motion_correction.MotionCorrect.num_splits_to_process_rig()'],['../namespacecaiman_1_1gui_1_1gui__pipeline.html#a856efe94e8232ba1b70f4e00006a0cd9',1,'caiman.gui.gui_pipeline.num_splits_to_process_rig()']]]
 ];

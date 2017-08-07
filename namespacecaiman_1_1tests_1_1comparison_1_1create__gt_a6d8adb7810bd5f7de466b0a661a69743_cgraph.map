@@ -1,6 +1,6 @@
 <map id="create" name="create">
 <area shape="rect" id="node2" href="$namespacecaiman_1_1utils_1_1utils.html#a1f220d12a07bc07ba0d2b941f4c30f33" title="download a file from the file list with the url of its location " alt="" coords="133,84,355,111"/>
-<area shape="rect" id="node3" href="$namespacecaiman_1_1components__evaluation.html#a57b89e19503abe333d5767d462266e7a" title="caiman.components_evaluation.estimate\l_components_quality" alt="" coords="112,135,376,177"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1components__evaluation.html#afc8731dfc865b4380b0e0894bbb3a34d" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="112,135,376,177"/>
 <area shape="rect" id="node4" href="$namespacecaiman_1_1components__evaluation.html#ad2a8435be788c8e75130e41f884adb0f" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="424,135,688,177"/>
 <area shape="rect" id="node5" href="$namespacecaiman_1_1components__evaluation.html#a967e8c445c84976814609f9c120153a2" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="736,70,1000,111"/>
 <area shape="rect" id="node9" href="$namespacecaiman_1_1components__evaluation.html#ad0d76d63424939fa0004f5cc800f0105" title="caiman.components_evaluation.classify\l_components_ep" alt="" coords="739,135,997,177"/>

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['h',['h',['../classcaiman_1_1base_1_1movies_1_1movie.html#a5e36941b3d856737e81516acd45edc50',1,'caiman::base::movies::movie']]],
+  ['hals4shape_5fbckgrnd',['HALS4shape_bckgrnd',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#abc0875894e963dbd4b5b2adaf587421e',1,'caiman::source_extraction::cnmf::spatial']]],
   ['has_5fsima',['HAS_SIMA',['../namespacecaiman_1_1base_1_1movies.html#a96392e5dda870c7e6c6f498192ec06ef',1,'caiman::base::movies']]],
   ['here',['here',['../namespacesetup.html#a3d7462064c15ae84cb15dfa3f136fa5c',1,'setup']]],
   ['html_5fstatic_5fpath',['html_static_path',['../namespaceconf.html#a0a3ed65f01f948fea22a3928be863e0f',1,'conf']]],

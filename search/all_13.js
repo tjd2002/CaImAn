@@ -1,9 +1,10 @@
 var searchData=
 [
+  ['update_5fbackground_5fcomponents',['update_background_components',['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a11c9096b0c0dec1e89212c74e902b5e2',1,'caiman::source_extraction::cnmf::cnmf::CNMF']]],
   ['update_5fiteration',['update_iteration',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#a89ac8f2ed05b17a8f7becca80506532a',1,'caiman::source_extraction::cnmf::temporal']]],
   ['update_5forder',['update_order',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#a6dd8a113f501367a22ea44f5a92d3cd3',1,'caiman::source_extraction::cnmf::utilities']]],
   ['update_5forder_5fgreedy',['update_order_greedy',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#aa1b3d1b8495a6d9dcecf91484544babb',1,'caiman::source_extraction::cnmf::utilities']]],
-  ['update_5fspatial_5fcomponents',['update_spatial_components',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#ac4b406f52054893ed2518a761921d4f4',1,'caiman::source_extraction::cnmf::spatial']]],
+  ['update_5fspatial_5fcomponents',['update_spatial_components',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a9f53b6bac6a1560b0102e55a7ec1710d',1,'caiman::source_extraction::cnmf::spatial']]],
   ['update_5ftemporal_5fcomponents',['update_temporal_components',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#ac3279e405da3b8cc2e4a21b68320971c',1,'caiman::source_extraction::cnmf::temporal']]],
   ['upsample_5ffactor_5fgrid',['upsample_factor_grid',['../classcaiman_1_1motion__correction_1_1_motion_correct.html#a3e652a9332445b783a5619a1135c6556',1,'caiman.motion_correction.MotionCorrect.upsample_factor_grid()'],['../namespacepipeline__multifile.html#a3e652a9332445b783a5619a1135c6556',1,'pipeline_multifile.upsample_factor_grid()']]],
   ['url',['url',['../namespacesetup.html#afcd5a3e84f2adb7f83fa6c99911f31e4',1,'setup']]],

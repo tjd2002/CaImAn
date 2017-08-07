@@ -9,34 +9,34 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>view_patches_bar</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-24 366,-24 366,4 -4,4"/>
-<!-- Node47 -->
-<g id="node1" class="node"><title>Node47</title>
+<!-- Node50 -->
+<g id="node1" class="node"><title>Node50</title>
 <polygon fill="#bfbfbf" stroke="black" points="0.5,-0.5 0.5,-19.5 97.5,-19.5 97.5,-0.5 0.5,-0.5"/>
 <text text-anchor="middle" x="49" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">view_patches_bar</text>
 </g>
-<!-- Node48 -->
-<g id="node2" class="node"><title>Node48</title>
+<!-- Node51 -->
+<g id="node2" class="node"><title>Node51</title>
 <g id="a_node2"><a xlink:href="namespacecaiman_1_1utils_1_1visualization.html#ad48f24a70009a82e7a8cafa02e283a0e" target="_top" xlink:title="Plots contour of spatial components against a background image and returns their coordinates. ">
 <polygon fill="white" stroke="black" points="134.5,-0.5 134.5,-19.5 211.5,-19.5 211.5,-0.5 134.5,-0.5"/>
 <text text-anchor="middle" x="173" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">plot_contours</text>
 </a>
 </g>
 </g>
-<!-- Node47&#45;&gt;Node48 -->
-<g id="edge1" class="edge"><title>Node47&#45;&gt;Node48</title>
+<!-- Node50&#45;&gt;Node51 -->
+<g id="edge1" class="edge"><title>Node50&#45;&gt;Node51</title>
 <path fill="none" stroke="midnightblue" d="M97.5177,-10C106.27,-10 115.412,-10 124.173,-10"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="124.237,-13.5001 134.237,-10 124.237,-6.5001 124.237,-13.5001"/>
 </g>
-<!-- Node49 -->
-<g id="node3" class="node"><title>Node49</title>
+<!-- Node52 -->
+<g id="node3" class="node"><title>Node52</title>
 <g id="a_node3"><a xlink:href="namespacecaiman_1_1base_1_1rois.html#ae37bc9f1a4e815bd7d8e44a2334883a2" target="_top" xlink:title="Calculation of the center of mass for spatial components. ">
 <polygon fill="white" stroke="black" points="248,-0.5 248,-19.5 362,-19.5 362,-0.5 248,-0.5"/>
 <text text-anchor="middle" x="305" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">caiman.base.rois.com</text>
 </a>
 </g>
 </g>
-<!-- Node48&#45;&gt;Node49 -->
-<g id="edge2" class="edge"><title>Node48&#45;&gt;Node49</title>
+<!-- Node51&#45;&gt;Node52 -->
+<g id="edge2" class="edge"><title>Node51&#45;&gt;Node52</title>
 <path fill="none" stroke="midnightblue" d="M211.601,-10C219.774,-10 228.654,-10 237.57,-10"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="237.615,-13.5001 247.615,-10 237.615,-6.5001 237.615,-13.5001"/>
 </g>

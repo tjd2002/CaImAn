@@ -1,10 +1,12 @@
 <map id="_hsm" name="_hsm">
 <area shape="rect" id="node2" href="$namespacecaiman_1_1utils_1_1stats.html#ad89811d5260ec000aff655f547770d16" title="Robust estimator of the mode of a data set using the half&#45;sample mode. " alt="" coords="110,20,239,47"/>
-<area shape="rect" id="node9" href="$namespacecaiman_1_1utils_1_1stats.html#ad63c9de399766045f2623d9ec6653709" title="Robust estimator of the mode of a data set using the half&#45;sample mode. " alt="" coords="125,71,225,97"/>
+<area shape="rect" id="node11" href="$namespacecaiman_1_1utils_1_1stats.html#ad63c9de399766045f2623d9ec6653709" title="Robust estimator of the mode of a data set using the half&#45;sample mode. " alt="" coords="125,71,225,97"/>
 <area shape="rect" id="node3" href="$namespacecaiman_1_1components__evaluation.html#a115ea8d0f9c41cb31cb7fe05535f65f7" title="estimate the noise in the traces under assumption that signals are sparse and only positive..." alt="" coords="288,5,552,46"/>
 <area shape="rect" id="node4" href="$namespacecaiman_1_1components__evaluation.html#a967e8c445c84976814609f9c120153a2" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="288,70,552,111"/>
 <area shape="rect" id="node5" href="$namespacecaiman_1_1components__evaluation.html#ad2a8435be788c8e75130e41f884adb0f" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="600,70,864,111"/>
-<area shape="rect" id="node6" href="$namespacecaiman_1_1components__evaluation.html#ad0d76d63424939fa0004f5cc800f0105" title="caiman.components_evaluation.classify\l_components_ep" alt="" coords="915,37,1173,78"/>
-<area shape="rect" id="node7" href="$namespacecaiman_1_1components__evaluation.html#a57b89e19503abe333d5767d462266e7a" title="caiman.components_evaluation.estimate\l_components_quality" alt="" coords="912,102,1176,143"/>
-<area shape="rect" id="node8" href="$namespacecaiman_1_1tests_1_1comparison_1_1create__gt.html#a6d8adb7810bd5f7de466b0a661a69743" title="the function that will create a groundtruth " alt="" coords="1224,102,1435,143"/>
+<area shape="rect" id="node6" href="$namespacecaiman_1_1components__evaluation.html#ad0d76d63424939fa0004f5cc800f0105" title="caiman.components_evaluation.classify\l_components_ep" alt="" coords="915,70,1173,111"/>
+<area shape="rect" id="node7" href="$namespacecaiman_1_1components__evaluation.html#afc8731dfc865b4380b0e0894bbb3a34d" title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a..." alt="" coords="912,135,1176,177"/>
+<area shape="rect" id="node8" href="$namespacecaiman_1_1components__evaluation.html#a68ebc78b1982bec697fe2fd84e6f997e" title="caiman.components_evaluation.chunker" alt="" coords="1225,84,1485,111"/>
+<area shape="rect" id="node9" href="$namespacecaiman_1_1tests_1_1comparison_1_1create__gt.html#a6d8adb7810bd5f7de466b0a661a69743" title="the function that will create a groundtruth " alt="" coords="1249,135,1460,177"/>
+<area shape="rect" id="node10" href="$namespacecaiman_1_1tests_1_1comparison_1_1investigative__comparison.html#a50b1b2517f6b995f96014e15fa877ba7" title="the function that will do the test " alt="" coords="1231,201,1478,242"/>
 </map>

@@ -96,9 +96,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a11cac6d74fb7990bfc88ee8ead245247"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1cluster.html#a11cac6d74fb7990bfc88ee8ead245247">extract_patch_coordinates_old</a> (d1, d2, rf=(7, 7), stride=(2, 2))</td></tr>
 <tr class="memdesc:a11cac6d74fb7990bfc88ee8ead245247"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that partition the FOV in patches.  <a href="#a11cac6d74fb7990bfc88ee8ead245247">More...</a><br /></td></tr>
 <tr class="separator:a11cac6d74fb7990bfc88ee8ead245247"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e90d80d07f5d94d1b6b5d208f4c5fc0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1cluster.html#a8e90d80d07f5d94d1b6b5d208f4c5fc0">extract_patch_coordinates</a> (dims, rf, stride)</td></tr>
-<tr class="memdesc:a8e90d80d07f5d94d1b6b5d208f4c5fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that partition the FOV in patches.  <a href="#a8e90d80d07f5d94d1b6b5d208f4c5fc0">More...</a><br /></td></tr>
-<tr class="separator:a8e90d80d07f5d94d1b6b5d208f4c5fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c23787e529ebc7a44d08002f301499"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1cluster.html#a35c23787e529ebc7a44d08002f301499">extract_patch_coordinates</a> (dims, rf, stride, border_pix=0)</td></tr>
+<tr class="memdesc:a35c23787e529ebc7a44d08002f301499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that partition the FOV in patches.  <a href="#a35c23787e529ebc7a44d08002f301499">More...</a><br /></td></tr>
+<tr class="separator:a35c23787e529ebc7a44d08002f301499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a225b519413ba9700997a06cfa2469ff4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1cluster.html#a225b519413ba9700997a06cfa2469ff4">apply_to_patch</a> (mmap_file, shape, dview, rf, stride, function, args, kwargs)</td></tr>
 <tr class="memdesc:a225b519413ba9700997a06cfa2469ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">apply function to patches in parallel or not  <a href="#a225b519413ba9700997a06cfa2469ff4">More...</a><br /></td></tr>
 <tr class="separator:a225b519413ba9700997a06cfa2469ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,19 +198,20 @@ dview   ipyparallel view on client
 <h2>Raise </h2>
 <p>Exception('Something went wrong') </p>
 
-<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00179">179</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00193">193</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a225b519413ba9700997a06cfa2469ff4_cgraph.svg" width="350" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a225b519413ba9700997a06cfa2469ff4_cgraph.svg" width="350" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a8e90d80d07f5d94d1b6b5d208f4c5fc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e90d80d07f5d94d1b6b5d208f4c5fc0">&#9670;&nbsp;</a></span>extract_patch_coordinates()</h2>
+<a id="a35c23787e529ebc7a44d08002f301499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c23787e529ebc7a44d08002f301499">&#9670;&nbsp;</a></span>extract_patch_coordinates()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,7 +232,13 @@ dview   ipyparallel view on client
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>stride</em>&#160;</td>
+          <td class="paramname"><em>stride</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>border_pix</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -254,7 +261,8 @@ dview   ipyparallel view on client
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a8e90d80d07f5d94d1b6b5d208f4c5fc0_icgraph.svg" width="475" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a35c23787e529ebc7a44d08002f301499_icgraph.svg" width="475" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -324,13 +332,14 @@ dview   ipyparallel view on client
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00225">225</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00239">239</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a0791f5c2482e1707e24578a03446a69d_cgraph.svg" width="582" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a0791f5c2482e1707e24578a03446a69d_cgraph.svg" width="582" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -373,7 +382,8 @@ dview   ipyparallel view on client
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a37de3dc274656637965b654ffc856e2f_cgraph.svg" width="411" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a37de3dc274656637965b654ffc856e2f_cgraph.svg" width="411" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -412,13 +422,14 @@ dview   ipyparallel view on client
 
 <p>Restart if necessary the pipyparallel cluster, and manages the case of SLURM. </p>
 
-<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00381">381</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00395">395</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a1dcb2a098d3e274cb3acd433ddc58953_cgraph.svg" width="400" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a1dcb2a098d3e274cb3acd433ddc58953_cgraph.svg" width="400" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -442,13 +453,14 @@ dview   ipyparallel view on client
 <p>Sometime you want to emulate the action of "source". </p>
 <p>in bash, settings some environment variables. Here is a way to do it. </p>
 
-<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00298">298</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00312">312</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_aa2ca4c63a4bfd3dc43f9a93bd0fb7525_icgraph.svg" width="736" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_aa2ca4c63a4bfd3dc43f9a93bd0fb7525_icgraph.svg" width="736" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -490,20 +502,22 @@ dview   ipyparallel view on client
 <p>ncpus int number of processors</p>
 <p>ipcluster str ipcluster binary file name; requires 4 path separators on Windows. ipcluster="C:\\\\Anaconda2\\\\Scripts\\\\ipcluster.exe" Default "ipcluster" </p>
 
-<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00258">258</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00272">272</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a36c3cc16b38cc1e90b578cb5952a0ba9_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a36c3cc16b38cc1e90b578cb5952a0ba9_cgraph.svg" width="251" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a36c3cc16b38cc1e90b578cb5952a0ba9_icgraph.svg" width="590" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a36c3cc16b38cc1e90b578cb5952a0ba9_icgraph.svg" width="590" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -544,13 +558,14 @@ dview   ipyparallel view on client
 <h2>Parameters </h2>
 <p>ipcluster str ipcluster binary file name; requires 4 path separators on Windows Default "ipcluster" </p>
 
-<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00321">321</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="cluster_8py_source.html#l00335">335</a> of file <a class="el" href="cluster_8py_source.html">cluster.py</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a224e29488e19814e85b50e1afd812a7d_icgraph.svg" width="590" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1cluster_a224e29488e19814e85b50e1afd812a7d_icgraph.svg" width="590" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

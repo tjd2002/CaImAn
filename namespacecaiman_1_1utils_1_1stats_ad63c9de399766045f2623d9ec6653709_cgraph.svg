@@ -9,21 +9,21 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 24)">
 <title>mode_robust</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-24 158,-24 158,4 -4,4"/>
-<!-- Node10 -->
-<g id="node1" class="node"><title>Node10</title>
+<!-- Node12 -->
+<g id="node1" class="node"><title>Node12</title>
 <polygon fill="#bfbfbf" stroke="black" points="0.5,-0.5 0.5,-19.5 75.5,-19.5 75.5,-0.5 0.5,-0.5"/>
 <text text-anchor="middle" x="38" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">mode_robust</text>
 </g>
-<!-- Node11 -->
-<g id="node2" class="node"><title>Node11</title>
+<!-- Node13 -->
+<g id="node2" class="node"><title>Node13</title>
 <g id="a_node2"><a xlink:href="namespacecaiman_1_1utils_1_1stats.html#a55b174a1921dc0c54b644979bc3b429a" target="_top" xlink:title="_hsm">
 <polygon fill="white" stroke="black" points="112.5,-0.5 112.5,-19.5 153.5,-19.5 153.5,-0.5 112.5,-0.5"/>
 <text text-anchor="middle" x="133" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_hsm</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge1" class="edge"><title>Node10&#45;&gt;Node11</title>
+<!-- Node12&#45;&gt;Node13 -->
+<g id="edge1" class="edge"><title>Node12&#45;&gt;Node13</title>
 <path fill="none" stroke="midnightblue" d="M75.7561,-10C84.538,-10 93.8054,-10 102.228,-10"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="102.345,-13.5001 112.345,-10 102.345,-6.5001 102.345,-13.5001"/>
 </g>

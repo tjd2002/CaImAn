@@ -3,8 +3,8 @@ var indexSectionsWithContent =
   0: "_abcdefghiklmnoprstuvwxyz",
   1: "cgmt",
   2: "cdnpsu",
-  3: "bcdglmoprstuv",
-  4: "_abcdefgilmnoprstuvz",
+  3: "bcdgilmoprstuv",
+  4: "_abcdefghilmnoprstuvz",
   5: "_abcdefghiklmnoprstuvwxy",
   6: "bc"
 };

@@ -3,7 +3,7 @@ var movies_8py =
     [ "movie", "classcaiman_1_1base_1_1movies_1_1movie.html", "classcaiman_1_1base_1_1movies_1_1movie" ],
     [ "_check_keys", "movies_8py.html#abb80862aafd574c59a95c0b24268be69", null ],
     [ "_todict", "movies_8py.html#a3678b9e2ae337ad61ebe7630c5e08ead", null ],
-    [ "load", "movies_8py.html#a5392a2c6b37a9407231041bee3f521a4", null ],
+    [ "load", "movies_8py.html#a2a70ae6d2a87f6d426a042758a428443", null ],
     [ "load_movie_chain", "movies_8py.html#a5a35758b31edb4a9b2105a058a0882a6", null ],
     [ "loadmat_sbx", "movies_8py.html#a1dae08ecd6c4b9ef41d5e820eb86604d", null ],
     [ "sbxread", "movies_8py.html#ad72bfc8cc5386d4470caa0be723598e9", null ],

@@ -91,8 +91,8 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div>
 <p><a href="https://gitter.im/agiovann/SOURCE_EXTRACTION_PYTHON?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"></a></p>
 <p><a href="https://travis-ci.org/simonsfoundation/CaImAn"></a></p>
-<p>A Computational toolbox for large scale **Ca**lcium **Im**aging **An**alysis*</p>
-<p>Recent advances in calcium imaging acquisition techniques are creating datasets of the order of Terabytes/week. Memory and computationally efficient algorithms are required to analyze in reasonable amount of time terabytes of data. This projects implements a set of essential methods required in the calcium imaging movies analysis pipeline. Fast and scalable algorithms are implemented for motion correction, movie manipulation and source and spike extraction.</p>
+<p>A Computational toolbox for large scale **Ca**lcium **Im**aging **An**alysis* and behavioral analysis</p>
+<p>Recent advances in calcium imaging acquisition techniques are creating datasets of the order of Terabytes/week. Memory and computationally efficient algorithms are required to analyze in reasonable amount of time terabytes of data. This projects implements a set of essential methods required in the calcium imaging movies analysis pipeline. Fast and scalable algorithms are implemented for motion correction, movie manipulation and source and spike extraction. <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> also contains some routine to the analyisi of behavior from video cameras. In summary, <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> provides a general purpose tool to handle large movies, with special emphasis tools for calcium imaging and behavioral datasets.</p>
 <h3>Features</h3>
 <ul>
 <li>Handling of very large datasets<ul>
@@ -118,8 +118,14 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li>also works in online mode (i.e. one sample at a time)</li>
 </ul>
 </li>
+<li>Behavioral Analysis (<a href="http://www.sciencedirect.com/science/article/pii/S0165027017302509">paper</a>)<ul>
+<li>unsupervised algorithms based on optical flow and NMF to automatically extract motor kinetics</li>
+<li>scales to large datasets since it exploits online dictionary learning (Mairal et. Al, <a href="http://spams-devel.gforge.inria.fr/">link</a>)</li>
+<li>we also developed a tool for acquiring movies at high speed with low cost equipment (<a href="https://github.com/bensondaled/eyeblink">package</a>)</li>
 </ul>
-<h3>Installation</h3>
+</li>
+</ul>
+<h3>Installation for calcium imaging</h3>
 <ul>
 <li>Installation on Mac<ul>
 <li>Download and install Anaconda (Python 2.7 or Python 3.5) <a href="http://docs.continuum.io/anaconda/install">http://docs.continuum.io/anaconda/install</a></li>
@@ -145,12 +151,20 @@ $(document).ready(function(){initNavTree('index.html','');});
 </ul>
 </li>
 </ul>
+<h3>Installation for behavioral analysis</h3>
+<ul>
+<li>Installation on Linux (windows and mac os are problematic with anaconda at the moment)<ul>
+<li>create a new environment (suggested for safety) and follow the instructions for the calcium imaging installation</li>
+<li>Install spams, as explained <a href="http://spams-devel.gforge.inria.fr/">here</a>. Installation is not straightforward and it might take some trials to get it right</li>
+</ul>
+</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md6"></a>
 Example</h1>
 <h3>Demos</h3>
 <ul>
 <li>Notebooks : The notebooks provide a simple and friendly way to get into <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> and understand its main characteristics.<ul>
-<li>you can find them in directly in <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> and launch them from your ipython Notebook application:</li>
+<li>you can find them in directly in <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> folder and launch them from your ipython Notebook application:</li>
 <li><p class="startli">to launch jupyter notebook :</p>
 <p class="startli">```bash</p>
 <p class="startli">source activate <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> conda launch jupyter</p>
@@ -158,20 +172,19 @@ Example</h1>
 </li>
 </ul>
 </li>
+<li>demo files are to be found also in the demos_detailed subfolder. We suggest to try demo_pipeline.py first since it contains most of the tasks required by calcium imaging. For behavior use demo_behavior.py<ul>
+<li>/!\ if you want to launch directly the python files, please be advised that your python console still needs to be in the <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> folder and not somewhere else.</li>
 </ul>
-<p>/!\ if you want to launch directly the python files, please be advised that your python console still needs to be in the <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> folder and not somewhere else.</p>
+</li>
+</ul>
 <h1><a class="anchor" id="autotoc_md7"></a>
 Testing</h1>
 <ul>
-<li>As of today, all of the commits needs to be previously tested before asking for a pull request. Call 'nosetests' program from inside of your <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> folder to look for defects.</li>
+<li>As of today, all of the commits needs to be previously tested before asking for a pull request. Call 'nosetests' program from inside of your <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> folder to look for errors.</li>
 </ul>
 <h3>general_test</h3>
 <ul>
-<li>This test will run the entire <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> program and look for differences against the original one. If your changes have made significant differences able to be recognise by this test. You are left with two choices :<ul>
-<li>Either it is a desired on purpose changement of the code. You will then need to submit your pull request. Adding to it the generated folder in tests/comparison/tests that you will need to rename 'tosend'</li>
-<li>Else it is an unplanned difference that has been found by the tests. In this situation, happy debugging.</li>
-</ul>
-</li>
+<li>This test will run the entire <a class="el" href="namespace_ca_im_an.html" title="compare how the elements behave ">CaImAn</a> program and look for differences against the original one. If your changes have made significant differences able to be recognise by this test.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md8"></a>
 Contributors:</h1>
@@ -192,6 +205,9 @@ Deconvolution and demixing of calcium imaging data</h1>
 <p>Pnevmatikakis, E.A., Gao, Y., Soudry, D., Pfau, D., Lacefield, C., ... &amp; Paninski, L. (2014). A structured matrix factorization framework for large scale calcium imaging data analysis. arXiv preprint arXiv:1409.2903. <a href="http://arxiv.org/abs/1409.2903">http://arxiv.org/abs/1409.2903</a>.</p>
 <p>Friedrich J. and Paninski L. Fast active set methods for online spike inference from calcium imaging. NIPS, 29:1984-1992, 2016. <a href="https://papers.nips.cc/paper/6505-fast-active-set-methods-for-online-spike-inference-from-calcium-imaging">PDF</a>. <a href="https://github.com/j-friedrich/OASIS">Github repository</a>.</p>
 <h1><a class="anchor" id="autotoc_md10"></a>
+Behavioral analysis</h1>
+<p>Giovannucci, A., Pnevmatikakis, E. A., Deverett, B., Pereira, T., Fondriest, J., Brady, M. J., ... &amp; Masip, D. (2017). Automated gesture tracking in head-fixed mice. Journal of Neuroscience Methods.</p>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Code description and related packages</h1>
 <p>The implementation of this package is developed in parallel with a MATLAB toobox, which can be found <a href="https://github.com/epnev/ca_source_extraction">here</a>.</p>
 <p>Some tools that are currently available in Matlab and not in Python are at the following links</p>
@@ -207,34 +223,11 @@ Code description and related packages</h1>
 <div class="fragment"><div class="line">sudo apt-get install g++ libatlas-base-dev gfortran  libopenblas-dev</div><div class="line">conda install openblas atlas</div></div><!-- fragment --><p>if still there are issues try</p>
 <p><code>export LD_LIBRARY_PATH=/path_to_your_home/anaconda2/lib/</code></p>
 <p>if more problems try</p>
-<div class="fragment"><div class="line">conda install  atlas (only Ubuntu)</div><div class="line">pip install &#39;tifffile&gt;=0.7&#39;</div><div class="line">conda install accelerate</div><div class="line">conda install openblas </div></div><!-- fragment --><p><b>CVXOPT</b>:</p>
-<p>If you are on Windows and don't manage to install or compile cvxopt, a simple solution is to download the right binary <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#cvxopt">there</a> and install the library by typing:</p>
-<div class="fragment"><div class="line">pip install cvxopt-1.1.7-XXXX.whl</div></div><!-- fragment --><h2>Test the system </h2>
-<p><b>SINGLE PATCH</b></p>
-<p>In case you used installation af point 1 above you will need to download the test files from <a href="https://github.com/agiovann/Constrained_NMF/releases/download/v0.3/Demo.zip">https://github.com/agiovann/Constrained_NMF/releases/download/v0.3/Demo.zip</a></p>
-<p>A. Go into the cloned folder, type <code>python demo.py</code></p>
-<p>B. Using the Spyder (type <code>conda install spyder</code>) IDE. </p><pre class="fragment">1. Unzip the file Demo.zip (you do not need this step if you installed dusing method 2 above, just enter the Constrained_NMF folder and you will find all the required files there).
-2. Open the file demo.py with spyder
-3. change the base_folder variable to point to the folder you just unzipped
-3. Run the cells one by one inspecting the output
-4. Remember to stop the cluster (last three lines of file). You can also stop it manually by typing in a terminal
-'ipcluster stop'
-</pre><p>C. Using notebook. </p><pre class="fragment">1. Unzip the file Demo.zip (you do not need this step if you installed dusing method 3 above, just enter the Constrained_NMF folder and you will find all the required files there).
-2. type `ipython notebook`
-3. open the notebook called demoCNMF.ipynb 
-4. change the base_folder variable to point to the folder you just unzipped
-5. and run cell by cell inspecting the result
-6. Remember to stop the cluster (last three lines of file). You can also stop it manually by typing in a terminal
-'ipcluster stop'
-</pre><p><b>MULTI PATCH</b></p><ul>
-<li>Download the two demo movies <a href="https://github.com/agiovann/Constrained_NMF/releases/download/v0.4-alpha/Patch_demo.zip">here</a> (courtesy of Dr. Sue Ann Koay from the Tank Lab, Princeton Neuroscience Institute, Princeton. NJ). Unzip the folder. Then in Spyder open the file demo_patches.py, and change the base_folder variable to point to the folder you just unzipped.</li>
-<li>Run one by one the cells (delimited by '#%')</li>
-<li>Inspect the results. The demo will start a cluster and process pathes of the movie (more details <a href="https://github.com/agiovann/Constrained_NMF/wiki/Processing-large-datasets">here</a>) in parallel (cse.map_reduce.run_CNMF_patches). Afterwards, it will merge the results back together and proceed to firstly merge potentially overlaping components (cse.merge_components) from different patches, secondly to update the spatial extent of the joined spatial components (cse.spatial.update_spatial_components), and finally denoising the traces (cse.temporal.update_temporal_components). THe final bit is used for visualization.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md11"></a>
-Documentation</h1>
-<p>Documentation of the code can be found <a href="http://agiovann.github.io/Constrained_NMF">here</a></p>
+<div class="fragment"><div class="line">conda install  atlas (only Ubuntu)</div><div class="line">pip install &#39;tifffile&gt;=0.7&#39;</div><div class="line">conda install accelerate</div><div class="line">conda install openblas </div></div><!-- fragment --><h2>Test the system </h2>
 <h1><a class="anchor" id="autotoc_md12"></a>
+Documentation</h1>
+<p>Documentation of the code can be found <a href="http://simonsfoundation.github.io/CaImAn/">here</a></p>
+<h1><a class="anchor" id="autotoc_md13"></a>
 Dependencies</h1>
 <p>The code uses the following libraries</p><ul>
 <li><a href="http://www.numpy.org/">NumPy</a></li>
@@ -245,27 +238,28 @@ Dependencies</h1>
 <li><a href="http://www.cvxpy.org/">cvxpy</a> for solving optimization problems</li>
 <li><a href="http://ipyparallel.readthedocs.org/en/latest/">ipyparallel</a> for parallel processing</li>
 <li><a href="http://opencv.org/">opencv</a> for efficient image manipulation and visualization</li>
+<li><a href="http://spams-devel.gforge.inria.fr/">Spams</a> for online dictionary learning</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 External Dependencies</h1>
-<p>For the constrained deconvolution method (<code>deconvolution.constrained_foopsi</code>) various solvers can be used, each of which requires some additional packages:</p>
+<p>For the constrained deconvolution method (<code>deconvolution.constrained_foopsi</code>) various solvers can be used, some of which requires additional packages:</p>
 <ol type="1">
 <li><code>'cvxpy'</code>: (default) For this option, the following packages are needed:<ul>
-<li><a href="http://cvxopt.org/">CVXOPT</a> Required.</li>
-<li><a href="http://www.cvxpy.org/">CVXPY</a> Required.</li>
+<li><a href="http://cvxopt.org/">CVXOPT</a> optional.</li>
+<li><a href="http://www.cvxpy.org/">CVXPY</a> optional.</li>
 </ul>
 </li>
 <li><code>'cvx'</code>: For this option, the following packages are needed:<ul>
-<li><a href="http://cvxopt.org/">CVXOPT</a> Required.</li>
-<li><a href="http://picos.zib.de/">PICOS</a> Required.</li>
+<li><a href="http://cvxopt.org/">CVXOPT</a> optional.</li>
+<li><a href="http://picos.zib.de/">PICOS</a> optional.</li>
 </ul>
 </li>
 </ol>
 <p>In general <code>'cvxpy'</code> can be faster, when using the 'ECOS' or 'SCS' sovlers, which are included with the CVXPY installation.</p>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Questions, comments, issues</h1>
 <p>Please use the gitter chat room (use the button above) for questions and comments and create an issue for any bugs you might encounter.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 License</h1>
 <p>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
 <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>

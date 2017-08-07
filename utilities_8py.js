@@ -1,7 +1,7 @@
 var utilities_8py =
 [
     [ "app_vertex_cover", "utilities_8py.html#a9c67d3457cc9c01779b73c02e40e8deb", null ],
-    [ "CNMFSetParms", "utilities_8py.html#a028471071926a41801c9085bd41a530e", null ],
+    [ "CNMFSetParms", "utilities_8py.html#ab55e527a68e4ae02cc9ab0ebad302d7d", null ],
     [ "computeDFF_traces", "utilities_8py.html#aea3aa78c7c153170012079014e1f4895", null ],
     [ "extract_DF_F", "utilities_8py.html#a280d064e1a9888eca4b375647d031491", null ],
     [ "manually_refine_components", "utilities_8py.html#ad671b2e9120b3437304b3149d174f625", null ],

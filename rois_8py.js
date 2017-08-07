@@ -16,5 +16,5 @@ var rois_8py =
     [ "nf_match_neurons_in_binary_masks", "rois_8py.html#a110f7c7d62671deddd9e58cc0c873a4c", null ],
     [ "nf_merge_roi_zip", "rois_8py.html#a547c857f35b0906431911026c4cb5bff", null ],
     [ "nf_read_roi", "rois_8py.html#a7943f7c71c288a233576f4f83df0665e", null ],
-    [ "nf_read_roi_zip", "rois_8py.html#a2dd16ae2c4f6fb213f12f340bb019957", null ]
+    [ "nf_read_roi_zip", "rois_8py.html#a9c5a9463f0aa19a2b004192adff1e5fe", null ]
 ];

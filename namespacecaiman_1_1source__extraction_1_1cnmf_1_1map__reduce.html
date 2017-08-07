@@ -94,9 +94,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af6abfd3565abe5dcb4298e6c55cac9d1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce.html#af6abfd3565abe5dcb4298e6c55cac9d1">cnmf_patches</a> (args_in)</td></tr>
 <tr class="memdesc:af6abfd3565abe5dcb4298e6c55cac9d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that is run for each patches.  <a href="#af6abfd3565abe5dcb4298e6c55cac9d1">More...</a><br /></td></tr>
 <tr class="separator:af6abfd3565abe5dcb4298e6c55cac9d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:affc25cb11b12edae4343574054636eee"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce.html#affc25cb11b12edae4343574054636eee">run_CNMF_patches</a> (file_name, shape, options, rf=16, stride=4, gnb=1, dview=None, memory_fact=1)</td></tr>
-<tr class="memdesc:affc25cb11b12edae4343574054636eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that runs CNMF in patches.  <a href="#affc25cb11b12edae4343574054636eee">More...</a><br /></td></tr>
-<tr class="separator:affc25cb11b12edae4343574054636eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f74fecf81fcb86cc9e15cf873649dbf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce.html#a7f74fecf81fcb86cc9e15cf873649dbf">run_CNMF_patches</a> (file_name, shape, options, rf=16, stride=4, gnb=1, dview=None, memory_fact=1, border_pix=0, low_rank_background=True)</td></tr>
+<tr class="memdesc:a7f74fecf81fcb86cc9e15cf873649dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that runs CNMF in patches.  <a href="#a7f74fecf81fcb86cc9e15cf873649dbf">More...</a><br /></td></tr>
+<tr class="separator:a7f74fecf81fcb86cc9e15cf873649dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="af6abfd3565abe5dcb4298e6c55cac9d1"></a>
@@ -127,6 +127,7 @@ Functions</h2></td></tr>
 <p>backend string 'ipyparallel' or 'single_thread' or SLURM</p>
 <p>n_processes int nuber of cores to be used (should be less than the number of cores started with ipyparallel)</p>
 <p>memory_fact double unitless number accounting how much memory should be used. It represents the fration of patch processed in a single thread. You will need to try different values to see which one would work</p>
+<p>low_rank_background bool if True the background is approximated with gnb components. If false every patch keeps its background (overlaps are randomly assigned to one spatial component only)</p>
 <h2></h2>
 <dl class="section return"><dt>Returns</dt><dd>A_tot matrix containing all the componenents from all the patches</dd>
 <dd>
@@ -138,19 +139,20 @@ optional_outputs set of outputs related to the result of CNMF ALGORITHM ON EACH 
 <h2>Raise </h2>
 <p>Empty Exception </p>
 
-<p class="definition">Definition at line <a class="el" href="map__reduce_8py_source.html#l00082">82</a> of file <a class="el" href="map__reduce_8py_source.html">map_reduce.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="map__reduce_8py_source.html#l00084">84</a> of file <a class="el" href="map__reduce_8py_source.html">map_reduce.py</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce_af6abfd3565abe5dcb4298e6c55cac9d1_cgraph.svg" width="536" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce_af6abfd3565abe5dcb4298e6c55cac9d1_cgraph.svg" width="536" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="affc25cb11b12edae4343574054636eee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affc25cb11b12edae4343574054636eee">&#9670;&nbsp;</a></span>run_CNMF_patches()</h2>
+<a id="a7f74fecf81fcb86cc9e15cf873649dbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f74fecf81fcb86cc9e15cf873649dbf">&#9670;&nbsp;</a></span>run_CNMF_patches()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +203,19 @@ optional_outputs set of outputs related to the result of CNMF ALGORITHM ON EACH 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>memory_fact</em> = <code>1</code>&#160;</td>
+          <td class="paramname"><em>memory_fact</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>border_pix</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>low_rank_background</em> = <code>True</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -224,6 +238,7 @@ optional_outputs set of outputs related to the result of CNMF ALGORITHM ON EACH 
 <p>backend string 'ipyparallel' or 'single_thread' or SLURM</p>
 <p>n_processes int nuber of cores to be used (should be less than the number of cores started with ipyparallel)</p>
 <p>memory_fact double unitless number accounting how much memory should be used. It represents the fration of patch processed in a single thread. You will need to try different values to see which one would work</p>
+<p>low_rank_background bool if True the background is approximated with gnb components. If false every patch keeps its background (overlaps are randomly assigned to one spatial component only)</p>
 <h2></h2>
 <dl class="section return"><dt>Returns</dt><dd>A_tot matrix containing all the components from all the patches</dd>
 <dd>
@@ -235,13 +250,14 @@ optional_outputs set of outputs related to the result of CNMF ALGORITHM ON EACH 
 <h2>Raise </h2>
 <p>Empty Exception </p>
 
-<p class="definition">Definition at line <a class="el" href="map__reduce_8py_source.html#l00198">198</a> of file <a class="el" href="map__reduce_8py_source.html">map_reduce.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="map__reduce_8py_source.html#l00204">204</a> of file <a class="el" href="map__reduce_8py_source.html">map_reduce.py</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce_affc25cb11b12edae4343574054636eee_cgraph.svg" width="352" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1source__extraction_1_1cnmf_1_1map__reduce_a7f74fecf81fcb86cc9e15cf873649dbf_cgraph.svg" width="352" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

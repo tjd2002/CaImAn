@@ -1,4 +1,5 @@
 <map id="get_contours" name="get_contours">
-<area shape="rect" id="node2" href="$namespacecaiman_1_1utils_1_1visualization.html#aa4202ac829178bc43b687c976927f108" title="Interactive plotting utility for ipython notebook. " alt="" coords="160,5,285,32"/>
-<area shape="rect" id="node3" href="$namespacecaiman_1_1utils_1_1visualization.html#accae53a5e7469ad871c431db8b073b82" title="Interactive plotting utility for ipython notbook. " alt="" coords="153,56,293,83"/>
+<area shape="rect" id="node2" href="$namespacecaiman_1_1utils_1_1visualization.html#aa4202ac829178bc43b687c976927f108" title="Interactive plotting utility for ipython notebook. " alt="" coords="160,12,285,39"/>
+<area shape="rect" id="node4" href="$namespacecaiman_1_1utils_1_1visualization.html#accae53a5e7469ad871c431db8b073b82" title="Interactive plotting utility for ipython notbook. " alt="" coords="153,63,293,89"/>
+<area shape="rect" id="node3" href="$namespacecaiman_1_1tests_1_1comparison_1_1investigative__comparison.html#a50b1b2517f6b995f96014e15fa877ba7" title="the function that will do the test " alt="" coords="342,5,589,46"/>
 </map>

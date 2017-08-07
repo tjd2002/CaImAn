@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['t',['t',['../classcaiman_1_1base_1_1movies_1_1movie.html#aaccc9105df5383111407fd5b41255e23',1,'caiman.base.movies.movie.t()'],['../namespacecaiman_1_1tests_1_1test__general.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'caiman.tests.test_general.T()'],['../namespacepipeline__multifile.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'pipeline_multifile.T()'],['../namespace_demo_motion_correction_parallel.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'DemoMotionCorrectionParallel.T()']]],
+  ['t',['t',['../classcaiman_1_1base_1_1movies_1_1movie.html#aaccc9105df5383111407fd5b41255e23',1,'caiman.base.movies.movie.t()'],['../namespacecaiman_1_1gui_1_1gui__pipeline.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'caiman.gui.gui_pipeline.T()'],['../namespacecaiman_1_1tests_1_1test__general.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'caiman.tests.test_general.T()'],['../namespacepipeline__multifile.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'pipeline_multifile.T()'],['../namespace_demo_motion_correction_parallel.html#adf1f3edb9115acb0a1e04209b7a9937b',1,'DemoMotionCorrectionParallel.T()']]],
   ['t0',['t0',['../classcaiman_1_1gui_1_1gui_1_1_g_u_i.html#abdb5a42ffee3ca622484b53a322f1004',1,'caiman::gui::gui::GUI']]],
   ['t1',['t1',['../namespacecaiman_1_1tests_1_1test__general.html#a469994e78f66a44815c015b7f4b8b2f8',1,'caiman.tests.test_general.t1()'],['../namespacepipeline__multifile.html#a469994e78f66a44815c015b7f4b8b2f8',1,'pipeline_multifile.t1()'],['../namespace_demo_motion_correction_parallel.html#a469994e78f66a44815c015b7f4b8b2f8',1,'DemoMotionCorrectionParallel.t1()']]],
   ['t2',['t2',['../namespacepipeline__multifile.html#a24aeadb733f27244ec14e4cba82eeee9',1,'pipeline_multifile.t2()'],['../namespace_demo_motion_correction_parallel.html#a24aeadb733f27244ec14e4cba82eeee9',1,'DemoMotionCorrectionParallel.t2()']]],
@@ -25,7 +25,7 @@ var searchData=
   ['test_5fbase',['test_base',['../namespacecaiman_1_1tests_1_1test__import.html#a5161570ed994fb28e2128fd363cbf344',1,'caiman::tests::test_import']]],
   ['test_5fdeconvolution_2epy',['test_deconvolution.py',['../test__deconvolution_8py.html',1,'']]],
   ['test_5fdemo_2epy',['test_demo.py',['../test__demo_8py.html',1,'']]],
-  ['test_5fgeneral',['test_general',['../namespacecaiman_1_1tests_1_1test__general.html#a2b1bcf9a89fad08ce0c74c1ffceeeb0c',1,'caiman::tests::test_general']]],
+  ['test_5fgeneral',['test_general',['../namespacecaiman_1_1tests_1_1comparison_1_1investigative__comparison.html#a50b1b2517f6b995f96014e15fa877ba7',1,'caiman.tests.comparison.investigative_comparison.test_general()'],['../namespacecaiman_1_1tests_1_1test__general.html#a2b1bcf9a89fad08ce0c74c1ffceeeb0c',1,'caiman.tests.test_general.test_general()']]],
   ['test_5fgeneral_2epy',['test_general.py',['../test__general_8py.html',1,'']]],
   ['test_5fimport_2epy',['test_import.py',['../test__import_8py.html',1,'']]],
   ['test_5fmake_5fg_5fmatrix',['test_make_G_matrix',['../namespacecaiman_1_1tests_1_1test__temporal.html#a1afa6af9553e1de3837726f361d4df70',1,'caiman::tests::test_temporal']]],
@@ -56,7 +56,7 @@ var searchData=
   ['total_5ftemplate_5fwls',['total_template_wls',['../namespacepipeline__multifile.html#ad1945e39fe904935021924a959942f7f',1,'pipeline_multifile']]],
   ['tr',['tr',['../namespacecaiman_1_1base_1_1traces.html#adf09e6b25ae335febd8ba69ee7daa07b',1,'caiman.base.traces.tr()'],['../namespacecaiman_1_1gui_1_1gui.html#adf09e6b25ae335febd8ba69ee7daa07b',1,'caiman.gui.gui.tr()']]],
   ['trace',['trace',['../classcaiman_1_1base_1_1traces_1_1trace.html',1,'caiman::base::traces']]],
-  ['traces',['traces',['../classcaiman_1_1gui_1_1gui_1_1_g_u_i.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'caiman.gui.gui.GUI.traces()'],['../namespacecaiman_1_1tests_1_1test__general.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'caiman.tests.test_general.traces()'],['../namespacepipeline__multifile.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'pipeline_multifile.traces()']]],
+  ['traces',['traces',['../classcaiman_1_1gui_1_1gui_1_1_g_u_i.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'caiman.gui.gui.GUI.traces()'],['../namespacecaiman_1_1gui_1_1gui__pipeline.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'caiman.gui.gui_pipeline.traces()'],['../namespacecaiman_1_1tests_1_1test__general.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'caiman.tests.test_general.traces()'],['../namespacepipeline__multifile.html#ad3d074ebad4ce65e092199ba4025ae6f',1,'pipeline_multifile.traces()']]],
   ['traces_2epy',['traces.py',['../traces_8py.html',1,'']]],
   ['tsub',['tsub',['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#aae0552b6a4c096b64cd8bf22e57818fc',1,'caiman.source_extraction.cnmf.cnmf.CNMF.tsub()'],['../classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf__optional__outputs_1_1_c_n_m_f.html#aae0552b6a4c096b64cd8bf22e57818fc',1,'caiman.source_extraction.cnmf.cnmf_optional_outputs.CNMF.tsub()']]]
 ];

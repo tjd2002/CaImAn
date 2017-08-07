@@ -1,13 +1,15 @@
 var classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f =
 [
-    [ "__init__", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a3a01771603ffb371421dea4edb033afc", null ],
+    [ "__init__", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a1e57a4a50978785656c43541daf2404b", null ],
     [ "fit", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a32e48f78118491a05156f10da3046cfb", null ],
     [ "A", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a3b98e2dffc6cb06a89dcb0d5c60a0206", null ],
     [ "Ain", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a8893d8a1e76eed8c5692bc60236ac807", null ],
     [ "alpha_snmf", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a8fc36505a03bc93b9e362534ab489c35", null ],
     [ "b", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a21ad0bd836b90d08f4cf640b4c298e7c", null ],
+    [ "b_in", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#aa5c644294b863ca59861fdb63a57c95a", null ],
     [ "bl", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a2b80f2ccccfe9054d1aa9e8f26079a79", null ],
     [ "block_size", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#abfff1d5ce7b60ec4854c8507b6287a17", null ],
+    [ "border_pix", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a6b7e325b8982e5c7179e405ddc9e431d", null ],
     [ "C", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#aaa53ca0b650dfd85c4f59fa156f7a2cc", null ],
     [ "c1", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a74fc5f6f852574d24cbca8153258784c", null ],
     [ "check_nan", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#aad1319465916200b3ae2606be6505ba3", null ],
@@ -20,6 +22,7 @@ var classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f =
     [ "gnb", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#aaac47bec404b9fa75349fea88e260fc4", null ],
     [ "gSig", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#af7bfe5fc551a63fdfa83cc88ef0a0c2a", null ],
     [ "k", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#adc468c70fb574ebd07287b38d0d0676d", null ],
+    [ "low_rank_background", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a6ce500febcfa2d8b687eebe5b2435bb0", null ],
     [ "memory_fact", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a2704fffd8edaca0f9ab36de151166e86", null ],
     [ "merge_thresh", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a24d66573b85231016405a88fbd1f8d4e", null ],
     [ "method_deconvolution", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a29d553fecf282d7e545d59dfa37c87cf", null ],
@@ -42,5 +45,6 @@ var classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f =
     [ "ssub", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#acfc4692ee22da963daa7146981479003", null ],
     [ "stride", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#afa4255ade5c2b2c46a4b4a9d1dd913f7", null ],
     [ "tsub", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#aae0552b6a4c096b64cd8bf22e57818fc", null ],
+    [ "update_background_components", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#a11c9096b0c0dec1e89212c74e902b5e2", null ],
     [ "YrA", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html#ad13f4ef02232cc621f4e6055271cf9e8", null ]
 ];

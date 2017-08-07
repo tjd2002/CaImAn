@@ -14,6 +14,7 @@ var hierarchy =
       [ "MotionCorrect", "classcaiman_1_1motion__correction_1_1_motion_correct.html", null ],
       [ "CNMF", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf_1_1_c_n_m_f.html", null ],
       [ "CNMF", "classcaiman_1_1source__extraction_1_1cnmf_1_1cnmf__optional__outputs_1_1_c_n_m_f.html", null ],
-      [ "Comparison", "classcaiman_1_1tests_1_1comparison_1_1comparison_1_1_comparison.html", null ]
+      [ "Comparison", "classcaiman_1_1tests_1_1comparison_1_1comparison_1_1_comparison.html", null ],
+      [ "Comparison", "classcaiman_1_1tests_1_1comparison_1_1comparisonplots_1_1_comparison.html", null ]
     ] ]
 ];

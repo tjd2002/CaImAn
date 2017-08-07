@@ -16,7 +16,7 @@
 </g>
 <!-- Node36 -->
 <g id="node2" class="node"><title>Node36</title>
-<g id="a_node2"><a xlink:href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#ac4b406f52054893ed2518a761921d4f4" target="_top" xlink:title="update spatial footprints and background through Basis Pursuit Denoising ">
+<g id="a_node2"><a xlink:href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a9f53b6bac6a1560b0102e55a7ec1710d" target="_top" xlink:title="update spatial footprints and background through Basis Pursuit Denoising ">
 <polygon fill="white" stroke="black" points="160,-98 160,-128 380,-128 380,-98 160,-98"/>
 <text text-anchor="start" x="168" y="-116" font-family="Helvetica,sans-Serif" font-size="10.00">caiman.source_extraction.cnmf.spatial.update</text>
 <text text-anchor="middle" x="270" y="-105" font-family="Helvetica,sans-Serif" font-size="10.00">_spatial_components</text>

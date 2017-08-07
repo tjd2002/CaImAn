@@ -9,52 +9,52 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 62)">
 <title>plot_contours</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-62 320,-62 320,4 -4,4"/>
-<!-- Node41 -->
-<g id="node1" class="node"><title>Node41</title>
+<!-- Node44 -->
+<g id="node1" class="node"><title>Node44</title>
 <polygon fill="#bfbfbf" stroke="black" points="0.5,-19.5 0.5,-38.5 77.5,-38.5 77.5,-19.5 0.5,-19.5"/>
 <text text-anchor="middle" x="39" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">plot_contours</text>
 </g>
-<!-- Node42 -->
-<g id="node2" class="node"><title>Node42</title>
+<!-- Node45 -->
+<g id="node2" class="node"><title>Node45</title>
 <g id="a_node2"><a xlink:href="namespacecaiman_1_1utils_1_1visualization.html#aa6b9002875d7d86524868e7d795a4f3f" target="_top" xlink:title="Interactive Equivalent of plot_contours for ipython notebook. ">
 <polygon fill="white" stroke="black" points="119,-38.5 119,-57.5 207,-57.5 207,-38.5 119,-38.5"/>
 <text text-anchor="middle" x="163" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">nb_plot_contour</text>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node42 -->
-<g id="edge1" class="edge"><title>Node41&#45;&gt;Node42</title>
+<!-- Node44&#45;&gt;Node45 -->
+<g id="edge1" class="edge"><title>Node44&#45;&gt;Node45</title>
 <path fill="none" stroke="midnightblue" d="M87.6348,-36.4185C97.8928,-38.0161 108.681,-39.6962 118.761,-41.266"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="88.019,-32.9363 77.5995,-34.8557 86.9418,-39.8529 88.019,-32.9363"/>
 </g>
-<!-- Node44 -->
-<g id="node4" class="node"><title>Node44</title>
+<!-- Node47 -->
+<g id="node4" class="node"><title>Node47</title>
 <g id="a_node4"><a xlink:href="namespacecaiman_1_1utils_1_1visualization.html#a329e25e43645b98ac6124f7ab37b67a9" target="_top" xlink:title="view spatial and temporal components interactively ">
 <polygon fill="white" stroke="black" points="114.5,-0.5 114.5,-19.5 211.5,-19.5 211.5,-0.5 114.5,-0.5"/>
 <text text-anchor="middle" x="163" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">view_patches_bar</text>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node44 -->
-<g id="edge4" class="edge"><title>Node41&#45;&gt;Node44</title>
+<!-- Node44&#45;&gt;Node47 -->
+<g id="edge4" class="edge"><title>Node44&#45;&gt;Node47</title>
 <path fill="none" stroke="midnightblue" d="M87.6762,-21.575C96.4509,-20.2085 105.612,-18.7817 114.385,-17.4154"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="86.9418,-18.1471 77.5995,-23.1443 88.019,-25.0637 86.9418,-18.1471"/>
 </g>
-<!-- Node43 -->
-<g id="node3" class="node"><title>Node43</title>
+<!-- Node46 -->
+<g id="node3" class="node"><title>Node46</title>
 <g id="a_node3"><a xlink:href="namespacecaiman_1_1utils_1_1visualization.html#ac95a3a5e8c3bee95392831c57548fc04" target="_top" xlink:title="Interactive equivalent of imshow for ipython notebook. ">
 <polygon fill="white" stroke="black" points="248.5,-38.5 248.5,-57.5 315.5,-57.5 315.5,-38.5 248.5,-38.5"/>
 <text text-anchor="middle" x="282" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">nb_imshow</text>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node43 -->
-<g id="edge2" class="edge"><title>Node42&#45;&gt;Node43</title>
+<!-- Node45&#45;&gt;Node46 -->
+<g id="edge2" class="edge"><title>Node45&#45;&gt;Node46</title>
 <path fill="none" stroke="midnightblue" d="M217.233,-41.2744C227.782,-41.1765 238.562,-41.3734 248.185,-41.8651"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="217.168,-37.7749 207.234,-41.4586 217.297,-44.7737 217.168,-37.7749"/>
 </g>
-<!-- Node43&#45;&gt;Node42 -->
-<g id="edge3" class="edge"><title>Node43&#45;&gt;Node42</title>
+<!-- Node46&#45;&gt;Node45 -->
+<g id="edge3" class="edge"><title>Node46&#45;&gt;Node45</title>
 <path fill="none" stroke="midnightblue" d="M238.017,-54.5344C227.979,-54.8195 217.283,-54.8219 207.234,-54.5414"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="238.33,-58.0248 248.185,-54.1349 238.056,-51.0302 238.33,-58.0248"/>
 </g>

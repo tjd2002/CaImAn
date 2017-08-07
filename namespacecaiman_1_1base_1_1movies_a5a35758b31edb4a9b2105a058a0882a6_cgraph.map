@@ -1,5 +1,5 @@
 <map id="load_movie_chain" name="load_movie_chain">
-<area shape="rect" id="node2" href="$namespacecaiman_1_1base_1_1movies.html#a5392a2c6b37a9407231041bee3f521a4" title="load movie from file. " alt="" coords="185,71,231,97"/>
+<area shape="rect" id="node2" href="$namespacecaiman_1_1base_1_1movies.html#a2a70ae6d2a87f6d426a042758a428443" title="load movie from file. " alt="" coords="185,71,231,97"/>
 <area shape="rect" id="node3" href="$namespacecaiman_1_1mmapping.html#aeb2ed62e4a9028089a2eec09d392707f" title="Load a memory mapped file created by the function save_memmap. " alt="" coords="280,5,440,46"/>
 <area shape="rect" id="node5" href="$namespacecaiman_1_1base_1_1movies.html#ad9b115e435b36308da1248112f09f0db" title="sbxreadskip" alt="" coords="313,71,407,97"/>
 <area shape="rect" id="node9" href="$namespacecaiman_1_1base_1_1movies.html#ad72bfc8cc5386d4470caa0be723598e9" title="sbxread" alt="" coords="325,121,395,148"/>

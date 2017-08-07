@@ -116,8 +116,8 @@ Functions</h2></td></tr>
 <tr class="memitem:a7943f7c71c288a233576f4f83df0665e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1base_1_1rois.html#a7943f7c71c288a233576f4f83df0665e">nf_read_roi</a> (fileobj)</td></tr>
 <tr class="memdesc:a7943f7c71c288a233576f4f83df0665e"><td class="mdescLeft">&#160;</td><td class="mdescRight">points = read_roi(fileobj)  <a href="#a7943f7c71c288a233576f4f83df0665e">More...</a><br /></td></tr>
 <tr class="separator:a7943f7c71c288a233576f4f83df0665e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dd16ae2c4f6fb213f12f340bb019957"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1base_1_1rois.html#a2dd16ae2c4f6fb213f12f340bb019957">nf_read_roi_zip</a> (fname, dims)</td></tr>
-<tr class="separator:a2dd16ae2c4f6fb213f12f340bb019957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5a9463f0aa19a2b004192adff1e5fe"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1base_1_1rois.html#a9c5a9463f0aa19a2b004192adff1e5fe">nf_read_roi_zip</a> (fname, dims, return_names=False)</td></tr>
+<tr class="separator:a9c5a9463f0aa19a2b004192adff1e5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a547c857f35b0906431911026c4cb5bff"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecaiman_1_1base_1_1rois.html#a547c857f35b0906431911026c4cb5bff">nf_merge_roi_zip</a> (fnames, idx_to_keep, new_fold)</td></tr>
 <tr class="memdesc:a547c857f35b0906431911026c4cb5bff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a zip file containing ROIs for ImageJ by combining elements from a list of ROI zip files.  <a href="#a547c857f35b0906431911026c4cb5bff">More...</a><br /></td></tr>
 <tr class="separator:a547c857f35b0906431911026c4cb5bff"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,7 +182,8 @@ Functions</h2></td></tr>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_ae37bc9f1a4e815bd7d8e44a2334883a2_icgraph.svg" width="1155" height="182"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_ae37bc9f1a4e815bd7d8e44a2334883a2_icgraph.svg" width="1155" height="182"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -225,17 +226,18 @@ Functions</h2></td></tr>
 <p>dist_thr distance threshold for duplicate detection</p>
 <p>FOV dimensions of the FOV</p>
 <h2></h2>
-<dl class="section return"><dt>Returns</dt><dd>ind list of indeces with duplicate entries</dd>
+<dl class="section return"><dt>Returns</dt><dd>duplicates list of indeces with duplicate entries</dd>
 <dd>
 ind_keep list of kept indeces </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00753">753</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00783">783</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a070957c81de2e5bac645b9e74264edad_cgraph.svg" width="440" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a070957c81de2e5bac645b9e74264edad_cgraph.svg" width="440" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -278,7 +280,8 @@ ind_keep list of kept indeces </dd></dl>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_adc8128004edb81aefbc6d8ba07557414_icgraph.svg" width="526" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_adc8128004edb81aefbc6d8ba07557414_icgraph.svg" width="526" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -353,20 +356,22 @@ ind_keep list of kept indeces </dd></dl>
 <p>pos_examples:</p>
 <p>neg_examples: </p>
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00586">586</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00616">616</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a6c407af6009f8ede225fa785d6bfc040_cgraph.svg" width="395" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a6c407af6009f8ede225fa785d6bfc040_cgraph.svg" width="395" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a6c407af6009f8ede225fa785d6bfc040_icgraph.svg" width="395" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a6c407af6009f8ede225fa785d6bfc040_icgraph.svg" width="395" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -433,13 +438,14 @@ ind_keep list of kept indeces </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00662">662</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00691">691</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a63d291a9e615c3c0d2c281bc50465b19_icgraph.svg" width="595" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a63d291a9e615c3c0d2c281bc50465b19_icgraph.svg" width="595" height="118"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -460,13 +466,14 @@ ind_keep list of kept indeces </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00686">686</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00715">715</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_afde6c0bad0f753a9a785404bdfda1000_cgraph.svg" width="595" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_afde6c0bad0f753a9a785404bdfda1000_cgraph.svg" width="595" height="67"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -521,7 +528,7 @@ ind_keep list of kept indeces </dd></dl>
 <p>spcompomps, 3d array containing the spatial components</p>
 <p>numSTD number of standard deviation above the mean of the spatial component to be considered signiificant </p>
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00706">706</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00735">735</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 
 </div>
 </div>
@@ -557,7 +564,8 @@ ind_keep list of kept indeces </dd></dl>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_ad8b7c6d1ce325bba2b0369a7ce7b8c85_icgraph.svg" width="510" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_ad8b7c6d1ce325bba2b0369a7ce7b8c85_icgraph.svg" width="510" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -600,7 +608,8 @@ ind_keep list of kept indeces </dd></dl>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a55efa0edbb0867a0fa3a8e86bb1fa407_cgraph.svg" width="526" height="99"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a55efa0edbb0867a0fa3a8e86bb1fa407_cgraph.svg" width="526" height="99"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -834,14 +843,16 @@ ind_keep list of kept indeces </dd></dl>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a110f7c7d62671deddd9e58cc0c873a4c_cgraph.svg" width="328" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a110f7c7d62671deddd9e58cc0c873a4c_cgraph.svg" width="328" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a110f7c7d62671deddd9e58cc0c873a4c_icgraph.svg" width="360" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a110f7c7d62671deddd9e58cc0c873a4c_icgraph.svg" width="360" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -884,13 +895,14 @@ ind_keep list of kept indeces </dd></dl>
 <p>idx_to_keep list of lists for each zip file index of elements to keep</p>
 <p>new_fold str name of the output zip file (without .zip extension) </p>
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00528">528</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00558">558</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a547c857f35b0906431911026c4cb5bff_cgraph.svg" width="568" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a547c857f35b0906431911026c4cb5bff_cgraph.svg" width="568" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
@@ -921,13 +933,14 @@ ind_keep list of kept indeces </dd></dl>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a7943f7c71c288a233576f4f83df0665e_icgraph.svg" width="438" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a7943f7c71c288a233576f4f83df0665e_icgraph.svg" width="438" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>
 </div>
-<a id="a2dd16ae2c4f6fb213f12f340bb019957"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dd16ae2c4f6fb213f12f340bb019957">&#9670;&nbsp;</a></span>nf_read_roi_zip()</h2>
+<a id="a9c5a9463f0aa19a2b004192adff1e5fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5a9463f0aa19a2b004192adff1e5fe">&#9670;&nbsp;</a></span>nf_read_roi_zip()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -942,7 +955,13 @@ ind_keep list of kept indeces </dd></dl>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>dims</em>&#160;</td>
+          <td class="paramname"><em>dims</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>return_names</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -952,20 +971,22 @@ ind_keep list of kept indeces </dd></dl>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00493">493</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="rois_8py_source.html#l00521">521</a> of file <a class="el" href="rois_8py_source.html">rois.py</a>.</p>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a2dd16ae2c4f6fb213f12f340bb019957_cgraph.svg" width="264" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a9c5a9463f0aa19a2b004192adff1e5fe_cgraph.svg" width="264" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 <div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a2dd16ae2c4f6fb213f12f340bb019957_icgraph.svg" width="299" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacecaiman_1_1base_1_1rois_a9c5a9463f0aa19a2b004192adff1e5fe_icgraph.svg" width="299" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
 </div>
 
 </div>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['debleach',['debleach',['../classcaiman_1_1base_1_1movies_1_1movie.html#a74c73d5ebf9501a5ac8a86c53f3681ab',1,'caiman::base::movies::movie']]],
-  ['deletesparse',['deletesparse',['../namespacecaiman_1_1tests_1_1comparison_1_1comparison.html#ac49f623968d42f2bb544422b4fbbb6e4',1,'caiman::tests::comparison::comparison']]],
+  ['deletesparse',['deletesparse',['../namespacecaiman_1_1tests_1_1comparison_1_1comparison.html#ac49f623968d42f2bb544422b4fbbb6e4',1,'caiman.tests.comparison.comparison.deletesparse()'],['../namespacecaiman_1_1tests_1_1comparison_1_1comparisonplots.html#ab137e5c7158d8ceaf79ed994d2b0550d',1,'caiman.tests.comparison.comparisonplots.deletesparse()']]],
   ['demo',['demo',['../namespacecaiman_1_1tests_1_1test__demo.html#ac5c3950ffe101e5dfa9c5ca2087dfc73',1,'caiman::tests::test_demo']]],
   ['detect_5fduplicates',['detect_duplicates',['../namespacecaiman_1_1base_1_1rois.html#a070957c81de2e5bac645b9e74264edad',1,'caiman::base::rois']]],
   ['determine_5fsearch_5flocation',['determine_search_location',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#aca0edbf4c2cd31fe1a9c228c4099a485',1,'caiman::source_extraction::cnmf::spatial']]],

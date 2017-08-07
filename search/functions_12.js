@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['val_5fparse',['val_parse',['../namespacecaiman_1_1utils_1_1utils.html#a2da4278493c8ec9464cd1b2d00f12bf2',1,'caiman::utils::utils']]],
-  ['view_5fpatches',['view_patches',['../namespacecaiman_1_1utils_1_1visualization.html#ac39091efeb0cf48e6ef3d9bbfb9634f4',1,'caiman::utils::visualization']]],
-  ['view_5fpatches_5fbar',['view_patches_bar',['../namespacecaiman_1_1utils_1_1visualization.html#a329e25e43645b98ac6124f7ab37b67a9',1,'caiman::utils::visualization']]]
+  ['update_5fiteration',['update_iteration',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#a89ac8f2ed05b17a8f7becca80506532a',1,'caiman::source_extraction::cnmf::temporal']]],
+  ['update_5forder',['update_order',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#a6dd8a113f501367a22ea44f5a92d3cd3',1,'caiman::source_extraction::cnmf::utilities']]],
+  ['update_5forder_5fgreedy',['update_order_greedy',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#aa1b3d1b8495a6d9dcecf91484544babb',1,'caiman::source_extraction::cnmf::utilities']]],
+  ['update_5fspatial_5fcomponents',['update_spatial_components',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1spatial.html#a9f53b6bac6a1560b0102e55a7ec1710d',1,'caiman::source_extraction::cnmf::spatial']]],
+  ['update_5ftemporal_5fcomponents',['update_temporal_components',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1temporal.html#ac3279e405da3b8cc2e4a21b68320971c',1,'caiman::source_extraction::cnmf::temporal']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['estimate_5fcomponents_5fquality',['estimate_components_quality',['../namespacecaiman_1_1components__evaluation.html#a57b89e19503abe333d5767d462266e7a',1,'caiman::components_evaluation']]],
+  ['estimate_5fcomponents_5fquality',['estimate_components_quality',['../namespacecaiman_1_1components__evaluation.html#afc8731dfc865b4380b0e0894bbb3a34d',1,'caiman::components_evaluation']]],
   ['estimate_5fnoise_5fmode',['estimate_noise_mode',['../namespacecaiman_1_1components__evaluation.html#a115ea8d0f9c41cb31cb7fe05535f65f7',1,'caiman::components_evaluation']]],
   ['estimate_5fparameters',['estimate_parameters',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a7199190b4f33e4a70dedc9deea7e4c45',1,'caiman::source_extraction::cnmf::deconvolution']]],
   ['estimate_5ftime_5fconstant',['estimate_time_constant',['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1deconvolution.html#a7a73db2b3e0e88f4a5f30f80944c1319',1,'caiman.source_extraction.cnmf.deconvolution.estimate_time_constant()'],['../namespacecaiman_1_1source__extraction_1_1cnmf_1_1pre__processing.html#a1b73b814ed1bd025323df1f86b4e083b',1,'caiman.source_extraction.cnmf.pre_processing.estimate_time_constant()']]],
@@ -21,7 +21,7 @@ var searchData=
   ['extract_5fepochs',['extract_epochs',['../classcaiman_1_1base_1_1traces_1_1trace.html#a28c99a09aa7f484cf66d25b57164ba98',1,'caiman::base::traces::trace']]],
   ['extract_5fmagnitude_5fand_5fangle_5ffrom_5fof',['extract_magnitude_and_angle_from_OF',['../namespacecaiman_1_1behavior_1_1behavior.html#a4bf41564df958e14887175cbda5e2cf4',1,'caiman::behavior::behavior']]],
   ['extract_5fmotor_5fcomponents_5fof',['extract_motor_components_OF',['../namespacecaiman_1_1behavior_1_1behavior.html#a8776745eb1de919d4cccceeb2f33a037',1,'caiman::behavior::behavior']]],
-  ['extract_5fpatch_5fcoordinates',['extract_patch_coordinates',['../namespacecaiman_1_1cluster.html#a8e90d80d07f5d94d1b6b5d208f4c5fc0',1,'caiman::cluster']]],
+  ['extract_5fpatch_5fcoordinates',['extract_patch_coordinates',['../namespacecaiman_1_1cluster.html#a35c23787e529ebc7a44d08002f301499',1,'caiman::cluster']]],
   ['extract_5fpatch_5fcoordinates_5fold',['extract_patch_coordinates_old',['../namespacecaiman_1_1cluster.html#a11cac6d74fb7990bfc88ee8ead245247',1,'caiman::cluster']]],
   ['extract_5fshifts',['extract_shifts',['../classcaiman_1_1base_1_1movies_1_1movie.html#a187e0ed2f4ef1c7f0a7715a5bc80585e',1,'caiman::base::movies::movie']]],
   ['extract_5ftraces_5ffrom_5fmasks',['extract_traces_from_masks',['../classcaiman_1_1base_1_1movies_1_1movie.html#ad773613155728399ba2d66c6686aeb66',1,'caiman::base::movies::movie']]],

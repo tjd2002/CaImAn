@@ -16,7 +16,7 @@
 </g>
 <!-- Node3 -->
 <g id="node2" class="node"><title>Node3</title>
-<g id="a_node2"><a xlink:href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#a028471071926a41801c9085bd41a530e" target="_top" xlink:title="Dictionary for setting the CNMF parameters. ">
+<g id="a_node2"><a xlink:href="namespacecaiman_1_1source__extraction_1_1cnmf_1_1utilities.html#ab55e527a68e4ae02cc9ab0ebad302d7d" target="_top" xlink:title="Dictionary for setting the CNMF parameters. ">
 <polygon fill="white" stroke="black" points="66.5,-0 66.5,-30 257.5,-30 257.5,-0 66.5,-0"/>
 <text text-anchor="start" x="74.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">caiman.source_extraction.cnmf.utilities.</text>
 <text text-anchor="middle" x="162" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">CNMFSetParms</text>

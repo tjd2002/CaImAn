@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['labelling_2epy',['labelling.py',['../labelling_8py.html',1,'']]]
+  ['investigative_5fcomparison_2epy',['investigative_comparison.py',['../investigative__comparison_8py.html',1,'']]]
 ];

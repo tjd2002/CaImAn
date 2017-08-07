@@ -29,7 +29,7 @@
 </g>
 <!-- Node2 -->
 <g id="node3" class="node"><title>Node2</title>
-<g id="a_node3"><a xlink:href="namespacecaiman_1_1components__evaluation.html#a57b89e19503abe333d5767d462266e7a" target="_top" xlink:title="caiman.components_evaluation.estimate\l_components_quality">
+<g id="a_node3"><a xlink:href="namespacecaiman_1_1components__evaluation.html#afc8731dfc865b4380b0e0894bbb3a34d" target="_top" xlink:title="Define a metric and order components according to the probabilty if some &quot;exceptional events&quot; (like a...">
 <polygon fill="white" stroke="black" points="80,-0 80,-30 278,-30 278,-0 80,-0"/>
 <text text-anchor="start" x="88" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">caiman.components_evaluation.estimate</text>
 <text text-anchor="middle" x="179" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_components_quality</text>
@@ -52,13 +52,8 @@
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge3" class="edge"><title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M278.053,-8.32233C286.586,-8.25305 295.252,-8.23354 303.86,-8.26379"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="303.906,-11.764 313.926,-8.32216 303.947,-4.76414 303.906,-11.764"/>
-</g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge12" class="edge"><title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M313.926,-21.6778C305.393,-21.747 296.727,-21.7665 288.119,-21.7361"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="288.073,-18.2359 278.053,-21.6777 288.032,-25.2358 288.073,-18.2359"/>
+<path fill="none" stroke="midnightblue" d="M278.053,-15C286.586,-15 295.252,-15 303.86,-15"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="303.926,-18.5001 313.926,-15 303.926,-11.5001 303.926,-18.5001"/>
 </g>
 <!-- Node4 -->
 <g id="node5" class="node"><title>Node4</title>
