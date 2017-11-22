@@ -343,11 +343,11 @@ def update_shapes(CY, CC, Ab, ind_A, indicator_components=None, Ab_dense=None, u
                                                              Ab_dense[ind_pixels].dot(CC[m])) /
                                                             CC[m, m]), 0)
                 # normalize
-                #if tmp.dot(tmp) > 0:
-                tmp *= 1e-3/min(1e-3,sqrt(tmp.dot(tmp))+np.finfo(float).eps)
-                Ab_dense[ind_pixels, m] = tmp / max(1, sqrt(tmp.dot(tmp)))                
-                Ab.data[Ab.indptr[m]:Ab.indptr[m + 1]] = Ab_dense[ind_pixels, m]
-                ind_A[m-nb] = Ab.indices[slice(Ab.indptr[m], Ab.indptr[m + 1])]
+                if tmp.dot(tmp) > 0:
+                    tmp *= 1e-3/min(1e-3,sqrt(tmp.dot(tmp))+np.finfo(float).eps)
+                    Ab_dense[ind_pixels, m] = tmp / max(1, sqrt(tmp.dot(tmp)))                
+                    Ab.data[Ab.indptr[m]:Ab.indptr[m + 1]] = Ab_dense[ind_pixels, m]
+                    ind_A[m-nb] = Ab.indices[slice(Ab.indptr[m], Ab.indptr[m + 1])]
             # Ab.data[Ab.indptr[nb]:] = np.concatenate(
             #     [Ab_dense[ind_A[m - nb], m] for m in range(nb, M)])
             # N.B. why does selecting only overlapping neurons help surprisingly little, i.e
@@ -451,9 +451,9 @@ def update_num_components(t, sv, Ab, Cf, Yres_buf, Y_buf, rho_buf,
                           dims, gSig, gSiz, ind_A, CY, CC, groups, oases, gnb=1,
                           rval_thr=0.875, bSiz=3, robust_std=False,
                           N_samples_exceptionality=5, remove_baseline=True,
-                          thresh_fitness_delta=-20, thresh_fitness_raw=-20, thresh_overlap=0.5,
+                          thresh_fitness_delta=-20, thresh_fitness_raw=-20, thresh_overlap=0.25,
                           batch_update_suff_stat=False, sn=None, g=None, thresh_s_min=None,
-                          s_min=None, Ab_dense=None, max_num_added=1):
+                          s_min=None, Ab_dense=None, max_num_added=1, min_num_trial = 1):
 
     gHalf = np.array(gSiz) // 2
 
@@ -470,8 +470,9 @@ def update_num_components(t, sv, Ab, Cf, Yres_buf, Y_buf, rho_buf,
     sv += rho_buf.get_last_frames(1).squeeze()
 
     num_added = 0
+    cnt = 0
     while num_added < max_num_added:
-
+        cnt +=1
         if first:
             sv_ = sv.copy()  # np.sum(rho_buf,0)
             first = False
@@ -491,6 +492,10 @@ def update_num_components(t, sv, Ab, Cf, Yres_buf, Y_buf, rho_buf,
         indeces = np.ravel_multi_index(np.ix_(np.arange(ijSig[0][0], ijSig[0][1]),
                                               np.arange(ijSig[1][0], ijSig[1][1])),
                                        dims, order='F').ravel()
+    
+        indeces_ = np.ravel_multi_index(np.ix_(np.arange(ijSig[0][0], ijSig[0][1]),
+                                              np.arange(ijSig[1][0], ijSig[1][1])),
+                                       dims, order='C').ravel()
 
         Ypx = Yres_buf.T[indeces, :]
 
@@ -514,6 +519,18 @@ def update_num_components(t, sv, Ab, Cf, Yres_buf, Y_buf, rho_buf,
         ain, cin, cin_res = rank1nmf(Ypx, ain)  # expects and returns normalized ain
 
         rval = corr(ain.copy(), np.mean(Ypx, -1))
+        
+        Ain = np.zeros((np.prod(dims), 1), dtype=np.float32)
+        Ain[indeces, :] = ain[:, None]
+
+        if Ab_dense is None:
+            ff = np.where((Ab.T.dot(Ain).T > thresh_overlap)[:, gnb:])[1] + gnb
+        else:
+            ff = np.where(Ab_dense[indeces, gnb:].T.dot(ain).T > thresh_overlap)[0] + gnb
+        
+        if ff.size > 0:
+            rval = 0
+            print('Overlap at step' + str(t))
 #        print(rval)
         if rval > rval_thr:
             # na = sqrt(ain.dot(ain))
@@ -546,19 +563,19 @@ def update_num_components(t, sv, Ab, Cf, Yres_buf, Y_buf, rho_buf,
             if ff.size > 0:
                 cc = [corr(cin_circ.copy(), cins) for cins in Cf[ff, :]]
 
-                if np.any(np.array(cc) > .8):
+                if np.any(np.array(cc) > .25):
                     #                    repeat = False
                     # vb = imblur(np.reshape(Ain, dims, order='F'),
                     #             sig=gSig, siz=gSiz, nDimBlur=2)
                     # restrict blurring to region where component is located
-                    vb = np.reshape(Ain, dims, order='F')
+                    vb = np.reshape(Ain, dims, order='C')
                     slices = tuple(slice(max(0, ijs[0] - 2 * sg), min(d, ijs[1] + 2 * sg))
                                    for ijs, sg, d in zip(ijSig, gSig, dims))  # is 2 enough?
                     vb[slices] = imblur(vb[slices], sig=gSig, siz=gSiz, nDimBlur=2)
                     sv_ -= (vb.ravel()**2) * cin.dot(cin)
 
 #                    pl.imshow(np.reshape(sv,dims));pl.pause(0.001)
-                    # print('Overlap at step' + str(t) + ' ' + str(cc))
+                  #  print('Overlap at step' + str(t) + ' ' + str(cc))
                     break
 
             if s_min is None:  # use thresh_s_min * noise estimate * sqrt(1-sum(gamma))
@@ -683,12 +700,20 @@ def update_num_components(t, sv, Ab, Cf, Yres_buf, Y_buf, rho_buf,
                 sv_[ind_vb] -= updt_res_sum
 
             else:
-
-                num_added = max_num_added
+                if cnt >= min_num_trial:
+                    num_added = max_num_added
+                else:
+                    first = False
+                    num_added = 0
+                    sv_[indeces_] = 0
 
         else:
-
-            num_added = max_num_added
+            if cnt >= min_num_trial:
+                num_added = max_num_added
+            else:
+                first = False
+                num_added = 0
+                sv_[indeces_] = 0
 
     return Ab, Cf, Yres_buf, rho_buf, CC, CY, ind_A, sv, groups
 

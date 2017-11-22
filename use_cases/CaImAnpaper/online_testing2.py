@@ -1,8 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Nov 17 11:58:34 2017
+
+@author: epnevmatikakis
+"""
+
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
 Complete pipeline for online processing using OnACID. 
-
 @author: Andrea Giovannucci @agiovann and Eftychios Pnevmatikakis @epnev
 Special thanks to Andreas Tolias and his lab at Baylor College of Medicine 
 for sharing their data used in this demo.
@@ -56,381 +63,133 @@ except:
 # 7: J115
 # 8: J123
 
-ind_dataset = 0
+ind_dataset = 8
 
 
 #%% set some global parameters here
 
-global_params = {'min_SNR': 2.5,        # minimum SNR when considering adding a new neuron
+global_params = {'min_SNR': .75,        # minimum SNR when considering adding a new neuron
                  'gnb' : 2,             # number of background components   
                  'epochs' : 2,          # number of passes over the data
-                 'rval_thr' : 0.7,      # spatial correlation threshold
+                 'rval_thr' : 0.70,     # spatial correlation threshold
                  'batch_length_dt': 10, # length of mini batch for OnACID in decay time units (length would be batch_length_dt*decay_time*fr)
                  'max_thr': 0.30,       # parameter for thresholding components when cleaning up shapes
                  'mot_corr' : False,    # flag for motion correction (set to False to compare directly on the same FOV)
+                 'min_num_trial' : 1    # minimum number of times to attempt to add a component
                  }
 
 params_movie = [{}]*10        # set up list of dictionaries
 #% neurofinder.03.00.test
 params_movie[0] = {'fname': '/mnt/ceph/neuro/labeling/neurofinder.03.00.test/images/final_map/Yr_d1_498_d2_467_d3_1_order_C_frames_2250_.mmap',
                  'folder_name' : '/mnt/ceph/neuro/labeling/neurofinder.03.00.test/',
+                 'ds_factor' : 1,
                  'p': 1,  # order of the autoregressive system
                  'fr': 7,
                  'decay_time': 0.4,
                  'gSig': [12,12],  # expected half size of neurons              
-                 'final_frate': 10,                 
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'gnb': 2,
-                 'n_chunks': 10,
-                 'swap_dim':False,
+                 'gnb': 3,
                  'T1': 2250
                  }
 #% neurofinder.04.00.test
 params_movie[1] = {'fname': '/mnt/ceph/neuro/labeling/neurofinder.04.00.test/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_3000_.mmap',
                  'folder_name' : '/mnt/ceph/neuro/labeling/neurofinder.04.00.test/',
+                 'epochs' : 2,
+                 'ds_factor' : 1,
                  'p': 1,  # order of the autoregressive system
                  'fr': 8, 
                  'gSig': [7,7],  # expected half size of neurons
                  'decay_time' : 0.5, # rough length of a transient
-                 'gnb' : 2,
+                 'gnb' : 3,
                  'T1' : 3000,
-                 
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 10,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 5,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',                
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
                  }
 
 #% neurofinder 02.00
 params_movie[2] = {'fname': '/mnt/ceph/neuro/labeling/neurofinder.02.00/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_8000_.mmap',
                  'folder_name' : '/mnt/ceph/neuro/labeling/neurofinder.02.00/',
+                 'ds_factor' : 1,
                  'p': 1,  # order of the autoregressive system
                  'fr' : 30, # imaging rate in Hz                 
                  'gSig': [8,8],  # expected half size of neuron
                  'decay_time': 0.3,                 
                  'gnb': 2,          
-                 'T1':8000,
-                 'r_values_min_full': .8,
-                 
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 6,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',            
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 10,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,              
-                 'only_init_patch': True,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'crop_pix':10                 
+                 'T1':8000,                 
                  }
 
 #% yuste
 params_movie[3] = {'fname': '/mnt/ceph/neuro/labeling/yuste.Single_150u/images/final_map/Yr_d1_200_d2_256_d3_1_order_C_frames_3000_.mmap',
                  'folder_name': '/mnt/ceph/neuro/labeling/yuste.Single_150u/', 
+                 'epochs' : 2,
+                 'ds_factor' : 1,
                  'p': 1,  # order of the autoregressive system
                  'fr' : 10,
-                 'decay_time' : 0.75,
+                 'decay_time' : .75,
                  'T1' : 3000,
-                 'gnb': 2,
-                 'gSig': [7,7],  # expected half size of neurons
-                 
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 15,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 8,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 10,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'crop_pix':0
+                 'gnb': 3,
+                 'gSig': [5,5],  # expected half size of neurons
                  }
 
 
 #% neurofinder.00.00
 params_movie[4] = {'fname': '/mnt/ceph/neuro/labeling/neurofinder.00.00/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_2936_.mmap',
                  'folder_name':  '/mnt/ceph/neuro/labeling/neurofinder.00.00/',
+                 'ds_factor' : 1,
                  'p': 1,  # order of the autoregressive system
                  'decay_time' : 0.4, 
-                 'fr' : 8,
+                 'fr' : 16,
                  'gSig': [8,8],  # expected half size of neurons
                  'gnb': 2,
                  'T1' : 2936,
-                 
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 6,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 10,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,                 
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'crop_pix':10
-                 }
+                  }
 #% neurofinder.01.01
 params_movie[5] = {'fname': '/mnt/ceph/neuro/labeling/neurofinder.01.01/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_1825_.mmap',
                  'folder_name': '/mnt/ceph/neuro/labeling/neurofinder.01.01/',
+                 'ds_factor' : 1,
                  'p': 1,  # order of the autoregressive system
-                 'merge_thresh': 0.9,  # merging threshold, max correlation allow
-                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 6,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',
-                 'gSig': [6,6],  # expected half size of neurons
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 10,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,
-                 'gnb': 2,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'crop_pix':2,
-                 'filter_after_patch':True
+                 'fr' : 8,
+                 'gnb':1,
+                 'T1' : 1825,
+                 'decay_time' : 1.4,     
+                 'gSig': [6,6]
                  }
-#% Sue Ann k56
+#% Sue Ann k53
 params_movie[6] = {'fname': '/mnt/ceph/neuro/labeling/k53_20160530/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_116043_.mmap',
                  'folder_name':'/mnt/ceph/neuro/labeling/k53_20160530/',
                  'gtname':'/mnt/ceph/neuro/labeling/k53_20160530/regions/joined_consensus_active_regions.npy',
+                 'epochs' : 2,
+                 'ds_factor' : 2,
                  'p': 1,  # order of the autoregressive system
                  'T1': 3000, # number of frames per file
                  'fr': 30, 
-                 'decay_time' : 0.3,
+                 'decay_time' : 0.4,
                  'gSig': [8,8],  # expected half size of neurons
                  'gnb' : 2,
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 9,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',                 
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 30,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'crop_pix':2,
-                 'filter_after_patch':True
                  }
 
 #% J115
 params_movie[7] = {'fname': '/mnt/ceph/neuro/labeling/J115_2015-12-09_L01_ELS/images/final_map/Yr_d1_463_d2_472_d3_1_order_C_frames_90000_.mmap',
                 'folder_name':'/mnt/ceph/neuro/labeling/J115_2015-12-09_L01_ELS/',
                 'gtname':'/mnt/ceph/neuro/labeling/J115_2015-12-09_L01_ELS/regions/joined_consensus_active_regions.npy',
-                 'p': 1,  # order of the autoregressive system
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-                 'K': 7,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',
-                 'gSig': [7,7],  # expected half size of neurons
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 30,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,
-                 'gnb': 2,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'crop_pix':2,
-                 'filter_after_patch':True
+                'epochs' : 1,
+                'ds_factor' : 2, 
+                'p': 1,  # order of the autoregressive system
+                'T1' : 1000,
+                'gnb' : 2,
+                'fr' : 30,
+                'decay_time' : 0.4,
+                'gSig' : [8,8]
                  }
 
 #% J123
 params_movie[8] = {'fname': '/mnt/ceph/neuro/labeling/J123_2015-11-20_L01_0/images/final_map/Yr_d1_458_d2_477_d3_1_order_C_frames_41000_.mmap',
                 'folder_name':'/mnt/ceph/neuro/labeling/J123_2015-11-20_L01_0/',
                 'gtname':'/mnt/ceph/neuro/labeling/J123_2015-11-20_L01_0/regions/joined_consensus_active_regions.npy',
+                 'ds_factor' : 2, 
                  'p': 1,  # order of the autoregressive system
-                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-                 'rf': 40,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-                 'stride_cnmf': 20,  # amounpl.it of overlap between the patches in pixels
-                 'K': 10,  # number of components per patch
-                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-                 'init_method': 'greedy_roi',
-                 'gSig': [12,12],  # expected half size of neurons
-                 'alpha_snmf': None,  # this controls sparsity
-                 'final_frate': 15,
-                 'r_values_min_patch': .5,  # threshold on space consistency
-                 'fitness_min_patch': -10,  # threshold on time variability
-                 # threshold on time variability (if nonsparse activity)
-                 'fitness_delta_min_patch': -10,
-                 'Npeaks': 5,
-                 'r_values_min_full': .8,
-                 'fitness_min_full': - 40,
-                 'fitness_delta_min_full': - 40,
-                 'only_init_patch': True,
-                 'gnb': 2,
-                 'memory_fact': 1,
-                 'n_chunks': 10,
-                 'update_background_components': True,# whether to update the background components in the spatial phase
-                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-                                     #(to be used with one background per patch)     
-                 'swap_dim':False,
-                 'crop_pix':2,
-                 'filter_after_patch':True
+                 'fr' : 30,
+                 'T1' : 1000,
+                 'decay_time' : 0.5,
+                 'gSig': [12,12]
                  }
-
-#%% Jan AMG
-#params_movie = {'fname': '/opt/local/Data/Jan/Jan-AMG_exp3_001/Yr_d1_512_d2_512_d3_1_order_C_frames_115897_.mmap',
-#                'gtname':'/mnt/ceph/neuro/labeling/Jan-AMG_exp3_001/regions/joined_consensus_active_regions.npy',
-#                 'p': 1,  # order of the autoregressive system
-#                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-#                 'rf': 25,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-#                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-#                 'K': 6,  # number of components per patch
-#                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-#                 'init_method': 'greedy_roi',
-#                 'gSig': [7,7],  # expected half size of neurons
-#                 'alpha_snmf': None,  # this controls sparsity
-#                 'final_frate':30,
-#                 'r_values_min_patch': .5,  # threshold on space consistency
-#                 'fitness_min_patch': -10,  # threshold on time variability
-#                 # threshold on time variability (if nonsparse activity)
-#                 'fitness_delta_min_patch': -10,
-#                 'Npeaks': 5,
-#                 'r_values_min_full': .8,
-#                 'fitness_min_full': - 40,
-#                 'fitness_delta_min_full': - 40,
-#                 'only_init_patch': True,
-#                 'gnb': 2,
-#                 'memory_fact': 1,
-#                 'n_chunks': 30,
-#                 'update_background_components': True,# whether to update the background components in the spatial phase
-#                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-#                                     #(to be used with one background per patch)     
-#                 'swap_dim':False,
-#                 'crop_pix':8,
-#                 'filter_after_patch':True
-#                 }
-##%%
-#params_movie = {'fname': '/mnt/ceph/neuro/labeling/k37_20160109_AM_150um_65mW_zoom2p2_00001_1-16/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_48000_.mmap',
-#                'gtname':'/mnt/ceph/neuro/labeling/k37_20160109_AM_150um_65mW_zoom2p2_00001_1-16/regions/joined_consensus_active_regions.npy',
-#                 'p': 1,  # order of the autoregressive system
-#                 'merge_thresh': 0.8,  # merging threshold, max correlation allow
-#                 'rf': 20,  # half-size of the patches in pixels. rf=25, patches are 50x50    20
-#                 'stride_cnmf': 10,  # amounpl.it of overlap between the patches in pixels
-#                 'K': 5,  # number of components per patch
-#                 'is_dendrites': False,  # if dendritic. In this case you need to set init_method to sparse_nmf
-#                 'init_method': 'greedy_roi',
-#                 'gSig': [6,6],  # expected half size of neurons
-#                 'alpha_snmf': None,  # this controls sparsity
-#                 'final_frate':30,
-#                 'r_values_min_patch': .5,  # threshold on space consistency
-#                 'fitness_min_patch': -10,  # threshold on time variability
-#                 # threshold on time variability (if nonsparse activity)
-#                 'fitness_delta_min_patch': -10,
-#                 'Npeaks': 5,
-#                 'r_values_min_full': .8,
-#                 'fitness_min_full': - 40,
-#                 'fitness_delta_min_full': - 40,
-#                 'only_init_patch': True,
-#                 'gnb': 2,
-#                 'memory_fact': 1,
-#                 'n_chunks': 30,
-#                 'update_background_components': True,# whether to update the background components in the spatial phase
-#                 'low_rank_background': True, #whether to update the using a low rank approximation. In the False case all the nonzero elements of the background components are updated using hals    
-#                                     #(to be used with one background per patch)     
-#                 'swap_dim':False,
-#                 'crop_pix':8,
-#                 'filter_after_patch':True
-#                 }
-
 
 
 ##% convert mmaps into tifs
@@ -448,32 +207,48 @@ params_movie[8] = {'fname': '/mnt/ceph/neuro/labeling/J123_2015-11-20_L01_0/imag
 #%%  download and list all files to be processed
 
 mot_corr = global_params['mot_corr']
+use_VST = False
 
 if mot_corr:
     fls = glob.glob('/'.join( params_movie[ind_dataset]['fname'].split('/')[:-3]+['images','tifs','*.tif']))
     template = cm.load( '/'.join( params_movie[ind_dataset]['fname'].split('/')[:-3]+['projections','median_projection.tif']))
 else:
-    fls = glob.glob('/'.join( params_movie[ind_dataset]['fname'].split('/')[:-3]+['images','mmap_tifs','*.tif']))
+    if not use_VST:
+        fls = glob.glob('/'.join( params_movie[ind_dataset]['fname'].split('/')[:-3]+['images','mmap_tifs','*.tif']))
+    else:
+        fls = glob.glob('/'.join( params_movie[ind_dataset]['fname'].split('/')[:-3]+['images','tiff_VST','*.tif']))
 
 fls.sort()
 print(fls)  
 
 #%% Set up some parameters
-ds_factor = 1                                                        # spatial downsampling factor (increases speed but may lose some fine structure)
+ds_factor = params_movie[ind_dataset]['ds_factor']                            # spatial downsampling factor (increases speed but may lose some fine structure)
 gSig = tuple(np.ceil(np.array(params_movie[ind_dataset]['gSig'])/ds_factor).astype(np.int))  # expected half size of neurons
 init_files = 1                                                       # number of files used for initialization
 online_files = len(fls) - 1                                          # number of files used for online
 initbatch = 200                                                      # number of frames for initialization (presumably from the first file)
 expected_comps = 4000                                                # maximum number of expected components used for memory pre-allocation (exaggerate here)
 K = 2                                                                # initial number of components
+min_SNR = global_params['min_SNR']
+min_SNR = 3.0956*np.log(len(fls)*params_movie[ind_dataset]['T1']/(307.85*params_movie[ind_dataset]['fr']) + 0.7421)
 N_samples = np.ceil(params_movie[ind_dataset]['fr']*params_movie[ind_dataset]['decay_time'])   # number of timesteps to consider when testing new neuron candidates
 pr_inc = 1 - scipy.stats.norm.cdf(global_params['min_SNR'])           # inclusion probability of noise transient
 thresh_fitness_raw = np.log(pr_inc)*N_samples       # event exceptionality threshold
 thresh_fitness_delta = -80.                         # make this very neutral 
 p = params_movie[ind_dataset]['p']                  # order of AR indicator dynamics
-rval_thr = global_params['rval_thr']                # correlation threshold for new component inclusion
-gnb = global_params['gnb']                          # number of background components
-epochs = global_params['epochs']                    # number of passes over the data
+#rval_thr = global_params['rval_thr']                # correlation threshold for new component inclusion
+rval_thr = 0.06*np.log(len(fls)*params_movie[ind_dataset]['T1']/(2177.*params_movie[ind_dataset]['fr'])-0.0462) +0.8862
+
+try:
+    gnb = params_movie[ind_dataset]['gnb']
+except:
+    gnb = global_params['gnb']    
+
+try:
+    epochs = params_movie[ind_dataset]['epochs']                     # number of background components
+except:
+    epochs = global_params['epochs']                    # number of passes over the data
+
 T1 = params_movie[ind_dataset]['T1']*len(fls)*epochs        # total length of all files (if not known use a large number, then truncate at the end)
 #minibatch_length = int(global_params['batch_length_dt']*params_movie[ind_dataset]['fr']*params_movie[ind_dataset]['decay_time'])
 
@@ -512,7 +287,7 @@ cnm_init = bare_initialization(Y[:initbatch].transpose(1, 2, 0), init_batch=init
                                  update_num_comps = True, rval_thr=rval_thr,
                                  thresh_fitness_delta = thresh_fitness_delta,
                                  thresh_fitness_raw = thresh_fitness_raw,
-                                 batch_update_suff_stat=True, max_comp_update_shape = 10, 
+                                 batch_update_suff_stat=True, max_comp_update_shape = 200, 
                                  deconv_flag = True,
                                  simultaneously=True, n_refit=0)
 
@@ -525,13 +300,15 @@ cnm_init = bare_initialization(Y[:initbatch].transpose(1, 2, 0), init_batch=init
 
 #% Prepare object for OnACID
 
-cnm_init._prepare_object(np.asarray(Yr[:,:initbatch]), T1, expected_comps, idx_components=None, N_samples_exceptionality = int(N_samples))
+cnm_init._prepare_object(np.asarray(Yr[:,:initbatch]), T1, expected_comps, idx_components=None, N_samples_exceptionality = int(N_samples),
+                         min_num_trial = global_params['min_num_trial'])
 
 #%% Run OnACID and optionally plot results in real time
 
 cnm2 = deepcopy(cnm_init)
 cnm2.max_comp_update_shape = np.inf
 cnm2.update_num_comps = True
+cnm2.A_epoch = []
 t = cnm2.initbatch
 tottime = []
 Cn = Cn_init.copy()
@@ -580,7 +357,7 @@ for iter in range(epochs):
         for frame_count, frame in enumerate(Y_):        # now process each file
             if np.isnan(np.sum(frame)):
                 raise Exception('Frame ' + str(frame_count) + ' contains nan')
-            if t % 100 == 0:
+            if t % 200 == 0:
                 print('Epoch: ' + str(iter+1) + '. ' + str(t)+' frames have beeen processed in total. '+str(cnm2.N - old_comps)+' new components were added. Total number of components is '+str(cnm2.Ab.shape[-1]-gnb))
                 old_comps = cnm2.N
     
@@ -634,8 +411,10 @@ for iter in range(epochs):
                 cv2.imshow('frame',vid_frame)                
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break                                
-    
+                
         print('Cumulative processing speed is ' + str((t - initbatch) / np.sum(tottime))[:5] + ' frames per second.')
+    cnm2.A_epoch.append(cnm2.Ab)
+        
         
 if save_movie:
     out.release()
@@ -654,7 +433,8 @@ if save_results:
 A, b = cnm2.Ab[:, cnm2.gnb:], cnm2.Ab[:, :cnm2.gnb].toarray()
 C, f = cnm2.C_on[cnm2.gnb:cnm2.M, t-t//epochs:t], cnm2.C_on[:cnm2.gnb, t-t//epochs:t]
 noisyC = cnm2.noisyC[:,t-t//epochs:t]
-b_trace = [osi.b for osi in cnm2.OASISinstances]
+if params_movie[ind_dataset]['p'] > 0:
+    b_trace = [osi.b for osi in cnm2.OASISinstances]
 
 #pl.figure()
 #crd = cm.utils.visualization.plot_contours(A, Cn, thr=0.9)
@@ -665,21 +445,35 @@ view_patches_bar(Yr, scipy.sparse.coo_matrix(A.tocsc()[:, :]), C[:, :], b, f,
                  dims[0], dims[1], YrA=noisyC[cnm2.gnb:cnm2.M] - C, img=Cn)
 
 #%% load, threshold and filter for size ground truth
-global_params['max_thr'] = 0.30
+global_params['max_thr'] = 0.25
 c, dview, n_processes = cm.cluster.setup_cluster(backend='local', n_processes=None, single_thread = True)
 
 gt_file = os.path.join(os.path.split(params_movie[ind_dataset]['fname'])[0], os.path.split(params_movie[ind_dataset]['fname'])[1][:-4] + 'match_masks.npz')
-min_radius = gSig[0]/2.          # minimum acceptable radius
-max_radius = 2.*gSig[0]          # maximum acceptable radius
+min_radius = max(gSig[0]/2.,2.)          # minimum acceptable radius
+max_radius = 2.*gSig[0]                  # maximum acceptable radius
 min_size_neuro = min_radius**2*np.pi
 max_size_neuro = max_radius**2*np.pi
+
 with np.load(gt_file, encoding = 'latin1') as ld:
     print(ld.keys())
-    locals().update(ld)
-    A_gt = scipy.sparse.coo_matrix(A_gt[()])
-    dims = (d1,d2)
-    
-A_gt_thr = cm.source_extraction.cnmf.spatial.threshold_components(A_gt.tocsc()[:,:].toarray(), dims, medw=None, thr_method='max', maxthr=global_params['max_thr'], extract_cc=True,
+    d1_or = int(ld['d1'])
+    d2_or = int(ld['d2'])
+    dims_or = (d1_or,d2_or)
+    A_gt = ld['A_gt'][()].toarray()
+    Cn_orig = ld['Cn']    
+    #locals().update(ld)
+    #A_gt = scipy.sparse.coo_matrix(A_gt[()])
+    #dims = (d1,d2)
+
+if ds_factor > 1:
+    A_gt = cm.movie(np.reshape(A_gt,dims_or+(-1,),order='F')).transpose(2,0,1).resize(1./ds_factor,1./ds_factor)
+    pl.figure(); pl.imshow(A_gt.sum(0))
+    A_gt2 = np.array(np.reshape(A_gt,(A_gt.shape[0],-1),order='F')).T
+    Cn_orig = cv2.resize(Cn_orig,None,fx=1./ds_factor,fy=1./ds_factor)
+else:
+    A_gt2 = A_gt.copy()
+        
+A_gt_thr = cm.source_extraction.cnmf.spatial.threshold_components(A_gt2, dims, medw=None, thr_method='max', maxthr=global_params['max_thr'], extract_cc=True,
                          se=None, ss=None, dview=None) 
 
 A_gt_thr_bin = A_gt_thr > 0
@@ -698,24 +492,23 @@ print(A_thr.shape)
 
 #%% compute results 
 
-use_cnn = False  # Use CNN classifier
+use_cnn = True  # Use CNN classifier
 if use_cnn:    
     from caiman.components_evaluation import evaluate_components_CNN
     predictions,final_crops = evaluate_components_CNN(A,dims,gSig,model_name = 'use_cases/CaImAnpaper/cnn_model')
-    thresh_cnn = .05
+    thresh_cnn = .1
     idx_components_cnn = np.where(predictions[:,1]>=thresh_cnn)[0]
     idx_neurons = np.intersect1d(idx_components_cnn,idx_size_neurons)
 else:
     idx_neurons = idx_size_neurons.copy()
         
-
-plot_results = True
+plot_results = False
 if plot_results:
     pl.figure(figsize=(30,20))
 
 tp_gt, tp_comp, fn_gt, fp_comp, performance_cons_off =  cm.base.rois.nf_match_neurons_in_binary_masks(A_gt_thr_bin[:,idx_size_neurons_gt].reshape([dims[0],dims[1],-1],order = 'F').transpose([2,0,1])*1.,
                                                                               A_thr_bin[:,idx_neurons].reshape([dims[0],dims[1],-1],order = 'F').transpose([2,0,1])*1.,thresh_cost=.7, min_dist = 10,
-                                                                              print_assignment= False,plot_results=plot_results,Cn=Cn, labels = ['GT','Offline'])
+                                                                              print_assignment= False,plot_results=plot_results,Cn=Cn_orig, labels = ['GT','Offline'])
 
 pl.rcParams['pdf.fonttype'] = 42
 font = {'family' : 'Arial',

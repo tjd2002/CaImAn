@@ -86,7 +86,7 @@ class CNMF(object):
                  update_background_components=True, rolling_sum = True, rolling_length = 100,
                  min_corr=.85, min_pnr=20, deconvolve_options_init=None, ring_size_factor=1.5,
 				 center_psf=True,  use_dense=True, deconv_flag = True,
-                 simultaneously=False, n_refit=0, N_samples_exceptionality = 5):
+                 simultaneously=False, n_refit=0, N_samples_exceptionality = 5, min_num_trial = 2):
         """
         Constructor of the CNMF method
 
@@ -300,6 +300,7 @@ class CNMF(object):
         self.simultaneously=simultaneously
         self.n_refit=n_refit
         self.N_samples_exceptionality = N_samples_exceptionality
+        self.min_num_trial = min_num_trial
 		
         self.min_corr = min_corr
         self.min_pnr = min_pnr
@@ -553,7 +554,7 @@ class CNMF(object):
         return self
 
     def _prepare_object(self, Yr, T, expected_comps, new_dims=None, idx_components=None,
-                        g=None, lam=None, s_min=None, bl=None, use_dense=True, N_samples_exceptionality = 5):
+                        g=None, lam=None, s_min=None, bl=None, use_dense=True, N_samples_exceptionality = 5, min_num_trial = 1):
 
         self.expected_comps = expected_comps
 
@@ -573,6 +574,7 @@ class CNMF(object):
         self.lam2 = self.lam[idx_components]
         self.dims2 = self.dims
         self.N_samples_exceptionality = N_samples_exceptionality
+        self.min_num_trial = min_num_trial
 
         self.N = self.A2.shape[-1]
         self.M = self.gnb + self.N
@@ -785,7 +787,8 @@ class CNMF(object):
                 sn=self.sn, g=np.mean(self.g2) if self.p == 1 else np.mean(self.g2, 0),
                 thresh_s_min=self.thresh_s_min, s_min=self.s_min,
                 Ab_dense=self.Ab_dense[:, :self.M] if self.use_dense else None,
-                oases=self.OASISinstances if self.p else None, N_samples_exceptionality=self.N_samples_exceptionality)
+                oases=self.OASISinstances if self.p else None, N_samples_exceptionality=self.N_samples_exceptionality,
+                min_num_trial = self.min_num_trial)
 
 
             num_added = len(self.ind_A) - self.N
