@@ -62,8 +62,10 @@ except:
 # 6: sue_ann_k53_20160530
 # 7: J115
 # 8: J123
+# 9: sue_ann_k37
+#10: Jan-AMG_exp3_001    
 
-ind_dataset = 8
+ind_dataset = 10
 
 
 #%% set some global parameters here
@@ -78,7 +80,7 @@ global_params = {'min_SNR': .75,        # minimum SNR when considering adding a 
                  'min_num_trial' : 1    # minimum number of times to attempt to add a component
                  }
 
-params_movie = [{}]*10        # set up list of dictionaries
+params_movie = [{}]*11        # set up list of dictionaries
 #% neurofinder.03.00.test
 params_movie[0] = {'fname': '/mnt/ceph/neuro/labeling/neurofinder.03.00.test/images/final_map/Yr_d1_498_d2_467_d3_1_order_C_frames_2250_.mmap',
                  'folder_name' : '/mnt/ceph/neuro/labeling/neurofinder.03.00.test/',
@@ -191,11 +193,33 @@ params_movie[8] = {'fname': '/mnt/ceph/neuro/labeling/J123_2015-11-20_L01_0/imag
                  'gSig': [12,12]
                  }
 
+#% Sue Ann k37
+params_movie[9] = {'fname' : '/mnt/ceph/neuro/labeling/k37_20160109_AM_150um_65mW_zoom2p2_00001_1-16/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_48000_.mmap',
+                    'folder_name' : '/mnt/ceph/neuro/labeling/k37_20160109_AM_150um_65mW_zoom2p2_00001_1-16/',
+                    'gtname' : '/mnt/ceph/neuro/labeling/k37_20160109_AM_150um_65mW_zoom2p2_00001_1-16/regions/joined_consensus_active_regions.npy',
+                    'ds_factor' : 2,
+                    'p' : 1,
+                    'fr' : 30,
+                    'T1' : 3000,
+                    'decay_time' : 0.5,
+                    'gSig' : [8,8]
+                    }
+#% Jan-AMG_exp3_001
+params_movie[10] = {'fname' : '/mnt/ceph/neuro/labeling/Jan-AMG_exp3_001/images/final_map/Yr_d1_512_d2_512_d3_1_order_C_frames_115897_.mmap',
+                    'folder_name' : '/mnt/ceph/neuro/labeling/Jan-AMG_exp3_001/',
+                    'gt_name' : '/mnt/ceph/neuro/labeling/Jan-AMG_exp3_001/regions/joined_consensus_active_regions.npy',
+                    'ds_factor' : 2,
+                    'p' : 1,
+                    'fr' : 30,
+                    'T1' : 1002,
+                    'decay_time' : 0.5,
+                    'gSig' : [7,7]
+                    }
 
-##% convert mmaps into tifs
+#%% convert mmaps into tifs
 #import os.path
 #
-#for ind_dataset in range(9):
+#for ind_dataset in [10]:
 #    fls = glob.glob(params_movie[ind_dataset]['folder_name']+'images/mmap/*.mmap')
 #    for file_count, ffll in enumerate(fls):
 #        file_name = '/'.join(ffll.split('/')[:-2]+['mmap_tifs']+[ffll.split('/')[-1][:-4]+'tif'])
@@ -381,10 +405,10 @@ for iter in range(epochs):
             tottime.append(time() - t1)                             # store time
     
             t += 1
-            #if t>=4500:
             #    break
                     
-            if t % 1000 == 0 and plot_contours_flag:
+            if t % 1000 == 0 and plot_con
+            #if t>=4500:tours_flag:
                 pl.cla()
                 A = cnm2.Ab[:, cnm2.gnb:]
                 crd = cm.utils.visualization.plot_contours(A, Cn, thr=0.9)  # update the contour plot every 1000 frames
@@ -502,7 +526,7 @@ if use_cnn:
 else:
     idx_neurons = idx_size_neurons.copy()
         
-plot_results = False
+plot_results = True
 if plot_results:
     pl.figure(figsize=(30,20))
 
