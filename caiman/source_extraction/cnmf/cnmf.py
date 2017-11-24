@@ -554,7 +554,8 @@ class CNMF(object):
         return self
 
     def _prepare_object(self, Yr, T, expected_comps, new_dims=None, idx_components=None,
-                        g=None, lam=None, s_min=None, bl=None, use_dense=True, N_samples_exceptionality = 5, min_num_trial = 1):
+                        g=None, lam=None, s_min=None, bl=None, use_dense=True, N_samples_exceptionality = 5, min_num_trial = 1,
+                        max_num_added = 2):
 
         self.expected_comps = expected_comps
 
@@ -575,6 +576,7 @@ class CNMF(object):
         self.dims2 = self.dims
         self.N_samples_exceptionality = N_samples_exceptionality
         self.min_num_trial = min_num_trial
+        self.max_num_added = max_num_added
 
         self.N = self.A2.shape[-1]
         self.M = self.gnb + self.N
