@@ -407,7 +407,7 @@ for iter in range(epochs):
             t += 1
             #    break
                     
-            if t % 1000 == 0 and plot_con
+            if t % 1000 == 0 and plot_contours_flag:
             #if t>=4500:tours_flag:
                 pl.cla()
                 A = cnm2.Ab[:, cnm2.gnb:]
