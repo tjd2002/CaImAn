@@ -78,7 +78,7 @@ fr = 15
 # approximate length of transient event in seconds
 decay_time = 0.5
 # expected half size of neurons
-gSig = (5, 5)
+gSig = (2, 2)
 # order of AR indicator dynamics
 p = 1
 # minimum SNR for accepting new components
@@ -169,10 +169,10 @@ cnm_init = bare_initialization(Y[:initbatch].transpose(1, 2, 0), init_batch=init
 
 #%% Plot initialization results
 
-crd = plot_contours(cnm_init.A.tocsc(), Cn_init, thr=0.9)
+#crd = plot_contours(cnm_init.A.tocsc(), Cn_init, thr=0.9)
 A, C, b, f, YrA, sn = cnm_init.A, cnm_init.C, cnm_init.b, cnm_init.f, cnm_init.YrA, cnm_init.sn
-view_patches_bar(Yr, scipy.sparse.coo_matrix(
-    A.tocsc()[:, :]), C[:, :], b, f, dims[0], dims[1], YrA=YrA[:, :], img=Cn_init)
+#view_patches_bar(Yr, scipy.sparse.coo_matrix(
+#    A.tocsc()[:, :]), C[:, :], b, f, dims[0], dims[1], YrA=YrA[:, :], img=Cn_init)
 
 bnd_AC = np.percentile(A.dot(C),(0.001,100-0.005))
 bnd_BG = np.percentile(b.dot(f),(0.001,100-0.001))
@@ -233,18 +233,23 @@ if save_init:
     save_object(cnm_init, fls[0][:-4] + '_DS_' + str(ds_factor) + '.pkl')
     cnm_init = load_object(fls[0][:-4] + '_DS_' + str(ds_factor) + '.pkl')
 
+#path_to_model = 'use_cases/edge-cutter/binary_cross_bootstrapped.h5'
+#path_to_model = 'use_cases/edge-cutter/residual_classifier_2classes.h5'
+#path_to_model = 'use_cases/CaImAnpaper/cnn_model.h5'
+path_to_model = 'use_cases/edge-cutter/sniper_sensitive.h5'
+
 cnm2._prepare_object(np.asarray(Yr), T1, expected_comps, idx_components=None,
                          min_num_trial=3, max_num_added = 3, N_samples_exceptionality=int(N_samples),
-                         path_to_model = 'use_cases/edge-cutter/residual_classifier_2classes.h5',
+                         path_to_model = path_to_model,
                          sniper_mode = True)
-cnm2.thresh_CNN_noisy = 0.995
+cnm2.thresh_CNN_noisy = 0.75
 #%% Run OnACID and optionally plot results in real time
 
 cnm2.Ab_epoch = []                       # save the shapes at the end of each epoch
 t = cnm2.initbatch                       # current timestep
 tottime = []
 Cn = Cn_init.copy()
-
+epochs = 2
 # flag for removing components with bad shapes
 remove_flag = False
 T_rm = 650    # remove bad components every T_rm frames
@@ -252,10 +257,10 @@ rm_thr = 0.1  # CNN classifier removal threshold
 # flag for plotting contours of detected components at the end of each file
 plot_contours_flag = False
 # flag for showing results video online (turn off flags for improving speed)
-play_reconstr = False
+play_reconstr = True
 # flag for saving movie (file could be quite large..)
 save_movie = False
-movie_name = os.path.join(folder_name, 'sniper_meso_0.995_new.avi')  # name of movie to be saved
+movie_name = os.path.join(folder_name, 'sniper_meso_0.995_sens.avi')  # name of movie to be saved
 resize_fact = 1.2                        # image resizing factor
 
 if online_files == 0:                    # check whether there are any additional files
@@ -267,7 +272,7 @@ else:
     # where to start reading at each file
     init_batc_iter = [initbatch] + [0] * online_files
 
-
+cnm2.added = []
 shifts = []
 show_residuals = True
 if show_residuals:
@@ -358,21 +363,21 @@ for iter in range(epochs):
                 vid_frame = create_frame(cnm2, img_norm, captions)
                 if save_movie:
                     out.write(vid_frame)
-                    if t-initbatch < 100:
+                    #if t-initbatch < 100:
                         #for rp in np.int32(np.ceil(np.exp(-np.arange(1,100)/30)*20)):
-                        for rp in range(len(cnm2.ind_new)*2):
-                            out.write(vid_frame)
+                    for rp in range(len(cnm2.ind_new)*2):
+                        out.write(vid_frame)
                 cv2.imshow('frame', vid_frame)
-                if t-initbatch < 100:
-                        for rp in range(len(cnm2.ind_new)*2):
-                            cv2.imshow('frame', vid_frame)
+                #if t-initbatch < 100:
+                for rp in range(len(cnm2.ind_new)*2):
+                    cv2.imshow('frame', vid_frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     break
 
         print('Cumulative processing speed is ' + str((t - initbatch) /
                                                       np.sum(tottime))[:5] + ' frames per second.')
     # save the shapes at the end of each epoch
-    cnm2.Ab_epoch.append(cnm2.Ab.copy())
+    #cnm2.Ab_epoch.append(cnm2.Ab.copy())
 
 if save_movie:
     out.release()

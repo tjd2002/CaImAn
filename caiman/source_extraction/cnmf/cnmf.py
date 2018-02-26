@@ -919,7 +919,7 @@ class CNMF(object):
             rho = np.reshape(rho, np.prod(self.dims2))
             self.rho_buf.append(rho)
 
-            self.Ab, Cf_temp, self.Yres_buf, self.rhos_buf, self.CC, self.CY, self.ind_A, self.sv, self.groups, self.ind_new = update_num_components(
+            self.Ab, Cf_temp, self.Yres_buf, self.rhos_buf, self.CC, self.CY, self.ind_A, self.sv, self.groups, self.ind_new, Ains2 = update_num_components(
                 t, self.sv, self.Ab, self.C_on[:self.M, (t - mbs + 1):(t + 1)],
                 self.Yres_buf, self.Yr_buf, self.rho_buf, self.dims2,
                 self.gSig, self.gSiz, self.ind_A, self.CY, self.CC, rval_thr=self.rval_thr,
@@ -936,7 +936,8 @@ class CNMF(object):
                 sniper_mode = self.sniper_mode)
 
             num_added = len(self.ind_A) - self.N
-
+            if len(Ains2) > 0:
+                self.added.append(list(Ains2))
             if num_added > 0:                
                 self.N += num_added
                 self.M += num_added
