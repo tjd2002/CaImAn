@@ -9,17 +9,28 @@ complete demo check the script demo_OnACID_mesoscope.py
 @author: jfriedrich & epnev
 """
 
+from copy import deepcopy
+import logging
+import numpy as np
 import os
+import pylab as pl
+from scipy.special import log_ndtr
 import sys
 
-import numpy as np
-import pylab as pl
 import caiman as cm
 from caiman.source_extraction import cnmf as cnmf
 from caiman.utils.visualization import view_patches_bar, plot_contours
-from copy import deepcopy
-from scipy.special import log_ndtr
 from caiman.paths import caiman_datadir
+
+#%%
+# Set up the logger; change this if you like.
+# You can log to a file using the filename parameter, or make the output more or less
+# verbose by setting level to logging.DEBUG, logging.INFO, logging.WARNING, or logging.ERROR
+
+logging.basicConfig(format=
+                          "%(relativeCreated)12d [%(filename)s:%(funcName)20s():%(lineno)s] [%(process)d] %(message)s",
+                    # filename="/tmp/caiman.log",
+                    level=logging.DEBUG)
 
 #%%
 def main():
@@ -94,7 +105,7 @@ def main():
 
     cnm_init = cnm_init.fit(images)
 
-    print(('Number of components:' + str(cnm_init.A.shape[-1])))
+    logging.info(('Number of components:' + str(cnm_init.A.shape[-1])))
 
     pl.figure()
     crd = plot_contours(cnm_init.A.tocsc(), Cn_init, thr=0.9)
@@ -114,7 +125,7 @@ def main():
 
     C, f = cnm.C_on[cnm.gnb:cnm.M], cnm.C_on[:cnm.gnb]
     A, b = cnm.Ab[:, cnm.gnb:cnm.M], cnm.Ab[:, :cnm.gnb]
-    print(('Number of components:' + str(A.shape[-1])))
+    logging.info(('Number of components:' + str(A.shape[-1])))
 
 #%% pass through the CNN classifier with a low threshold (keeps clearer neuron shapes and excludes processes)
     use_CNN = True

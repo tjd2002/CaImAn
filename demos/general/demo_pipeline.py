@@ -18,10 +18,14 @@ from __future__ import division
 from __future__ import print_function
 from builtins import range
 
-import os
-import sys
 import cv2
 import glob
+import logging
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+import sys
+import time
 
 try:
     cv2.setNumThreads(0)
@@ -30,17 +34,12 @@ except:
 
 try:
     if __IPYTHON__:
-        print("Running under iPython")
         # this is used for debugging purposes only. allows to reload classes
         # when changed
         get_ipython().magic('load_ext autoreload')
         get_ipython().magic('autoreload 2')
 except NameError:
     pass
-
-import matplotlib.pyplot as plt
-import numpy as np
-import time
 
 import caiman as cm
 from caiman.utils.utils import download_demo
@@ -49,6 +48,16 @@ from caiman.source_extraction.cnmf import cnmf as cnmf
 from caiman.motion_correction import MotionCorrect
 from caiman.source_extraction.cnmf.utilities import detrend_df_f
 from caiman.components_evaluation import estimate_components_quality_auto
+
+#%%
+# Set up the logger; change this if you like.
+# You can log to a file using the filename parameter, or make the output more or less
+# verbose by setting level to logging.DEBUG, logging.INFO, logging.WARNING, or logging.ERROR
+
+logging.basicConfig(format=
+                          "%(relativeCreated)12d [%(filename)s:%(funcName)20s():%(lineno)s] [%(process)d] %(message)s",
+                    # filename="/tmp/caiman.log",
+                    level=logging.DEBUG)
 
 #%%
 def main():

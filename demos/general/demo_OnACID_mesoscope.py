@@ -10,6 +10,7 @@ for sharing their data used in this demo.
 
 from copy import deepcopy
 import glob
+import logging
 import numpy as np
 import os
 import pylab as pl
@@ -19,7 +20,6 @@ from time import time
 
 try:
     if __IPYTHON__:
-        print('Detected iPython')
         # this is used for debugging purposes only. allows to reload classes when changed
         get_ipython().magic('load_ext autoreload')
         get_ipython().magic('autoreload 2')
@@ -36,6 +36,16 @@ from caiman.utils.visualization import plot_contours
 from caiman.source_extraction.cnmf.online_cnmf import bare_initialization
 from caiman.source_extraction.cnmf.utilities import detrend_df_f_auto
 from caiman.paths import caiman_datadir
+
+#%%
+# Set up the logger; change this if you like.
+# You can log to a file using the filename parameter, or make the output more or less
+# verbose by setting level to logging.DEBUG, logging.INFO, logging.WARNING, or logging.ERROR
+
+logging.basicConfig(format=
+                          "%(relativeCreated)12d [%(filename)s:%(funcName)20s():%(lineno)s] [%(process)d] %(message)s",
+                    # filename="/tmp/caiman.log",
+                    level=logging.DEBUG)
 
 #%%
 def main():
@@ -56,7 +66,7 @@ def main():
     fls = glob.glob(folder_name + '/*' + extension)
 
     # your list of files should look something like this
-    print(fls)
+    logging.info(fls)
 
 #%%   Set up some parameters
 
@@ -278,7 +288,7 @@ def main():
 
         # np.array(fls)[np.array([1,2,3,4,5,-5,-4,-3,-2,-1])]:
         for file_count, ffll in enumerate(process_files):
-            print('Now processing file ' + ffll)
+            logging.info('Now processing file ' + ffll)
             Y_ = cm.load(ffll, subindices=slice(
                 init_batc_iter[file_count], T1, None))
 
@@ -301,7 +311,7 @@ def main():
                 if np.isnan(np.sum(frame)):
                     raise Exception('Frame ' + str(frame_count) + ' contains nan')
                 if t % 100 == 0:
-                    print('Epoch: ' + str(iter + 1) + '. ' + str(t) + ' frames have beeen processed in total. ' + str(cnm2.N -
+                    logging.debug('Epoch: ' + str(iter + 1) + '. ' + str(t) + ' frames have beeen processed in total. ' + str(cnm2.N -
                                                                                                                       old_comps) + ' new components were added. Total number of components is ' + str(cnm2.Ab.shape[-1] - gnb))
                     old_comps = cnm2.N
 
@@ -334,7 +344,7 @@ def main():
                     prd, _ = evaluate_components_CNN(cnm2.Ab[:, gnb:], dims, gSig)
                     ind_rem = np.where(prd[:, 1] < rm_thr)[0].tolist()
                     cnm2.remove_components(ind_rem)
-                    print('Removing '+str(len(ind_rem))+' components')
+                    logging.info('Removing '+str(len(ind_rem))+' components')
 
                 if t % 1000 == 0 and plot_contours_flag:
                     pl.cla()
@@ -358,7 +368,7 @@ def main():
                     if cv2.waitKey(1) & 0xFF == ord('q'):
                         break
 
-            print('Cumulative processing speed is ' + str((t - initbatch) /
+            logging.info('Cumulative processing speed is ' + str((t - initbatch) /
                                                           np.sum(tottime))[:5] + ' frames per second.')
         # save the shapes at the end of each epoch
         cnm2.Ab_epoch.append(cnm2.Ab.copy())
