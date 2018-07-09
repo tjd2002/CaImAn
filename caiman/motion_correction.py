@@ -2246,7 +2246,7 @@ def motion_correct_batch_rigid(fname, max_shifts, dview=None, splits=56, num_spl
         old_templ = new_templ.copy()
         if iter_ == num_iter - 1:
             save_movie = save_movie_rigid
-            logging.deubg('saving!')
+            logging.debug('saving!')
 
         fname_tot_rig, res_rig = motion_correction_piecewise(fname, splits, strides=None, overlaps=None,
                                                              add_to_movie=add_to_movie, template=old_templ, max_shifts=max_shifts, max_deviation_rigid=0,
