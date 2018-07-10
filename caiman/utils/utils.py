@@ -21,19 +21,20 @@ https://docs.python.org/2/library/urllib.html
 #\pre none
 from __future__ import print_function
 
-from caiman.paths import caiman_datadir
+import cv2
+import logging
 import numpy as np
-import scipy
 import os
+import scipy
 from scipy.ndimage.filters import gaussian_filter
 from tifffile import TiffFile
-import cv2
 
 try:
     cv2.setNumThreads(0)
 except:
     pass
 
+# TODO: Simplify conditional imports below
 try:
     from urllib2 import urlopen
 except ImportError:
@@ -42,6 +43,8 @@ try:  # python2
     import cPickle as pickle
 except ImportError:  # python3
     import pickle
+
+from caiman.paths import caiman_datadir
 from ..external.cell_magic_wand import cell_magic_wand
 from ..source_extraction.cnmf.spatial import threshold_components
 
@@ -88,13 +91,13 @@ def download_demo(name='Sue_2x_3000_40_-46.tif', save_folder=''):
         path_movie = os.path.join(base_folder, save_folder, name)
         if not os.path.exists(path_movie):
             url = file_dict[name]
-            print("downloading " + name + "with urllib")
+            logging.info("downloading " + name + " with urllib")
             f = urlopen(url)
             data = f.read()
             with open(path_movie, "wb") as code:
                 code.write(data)
         else:
-            print("File already downloaded")
+            logging.info("File " + str(name) + " already downloaded")
     else:
         raise Exception('Cannot find the example_movies folder in your caiman_datadir - did you make one with caimanmanager.py?')
     return path_movie
@@ -173,7 +176,7 @@ def get_image_description_SI(fname):
 
     for idx, pag in enumerate(tf.pages):
         if idx % 1000 == 0:
-            print(idx)
+            logging.debug(idx)
     #        i2cd=si_parse(pag.tags['image_description'].value)['I2CData']
         field = pag.tags['image_description'].value
 
@@ -351,7 +354,7 @@ def apply_magic_wand(A, gSig, dims, A_thr=None, coms=None, dview=None,
         params.append([A.tocsc()[:,idx].toarray().reshape(dims, order='F'),
             coms[idx], min_radius, max_radius, roughness, zoom_factor, center_range])
 
-    print(len(params))
+    logging.debug(len(params))
 
     if dview is not None:
         masks = np.array(list(dview.map(cell_magic_wand_wrapper, params)))

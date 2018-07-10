@@ -397,7 +397,7 @@ class CNMF(object):
         if np.isfortran(Yr):
             raise Exception('The file is in F order, it should be in C order (see save_memmap function')
 
-        print((T,) + dims)
+        logging.info((T,) + dims)
 
         # Make sure filename is pointed correctly (numpy sets it to None sometimes)
         try:
@@ -418,7 +418,7 @@ class CNMF(object):
         self.options['spatial_params']['ss'] = np.ones(
             (3,) * len(dims), dtype=np.uint8)
 
-        print(('using ' + str(self.n_processes) + ' processes'))
+        logging.info(('Using ' + str(self.n_processes) + ' processes'))
         if self.n_pixels_per_process is None:
             avail_memory_per_process = psutil.virtual_memory()[
                 1] / 2.**30 / self.n_processes
@@ -443,18 +443,18 @@ class CNMF(object):
         self.options['spatial_params']['block_size'] = self.block_size
         self.options['spatial_params']['num_blocks_per_run'] = self.num_blocks_per_run
 
-        print(('using ' + str(self.n_pixels_per_process) + ' pixels per process'))
-        print(('using ' + str(self.block_size) + ' block_size'))
+        logging.debug(('using ' + str(self.n_pixels_per_process) + ' pixels per process'))
+        logging.debug(('using ' + str(self.block_size) + ' block_size'))
 
         options = self.options
 
         if self.rf is None:  # no patches
-            print('preprocessing ...')
+            logging.info('preprocessing ...')
             Yr, sn, g, psx = preprocess_data(
                 Yr, dview=self.dview, **options['preprocess_params'])
 
             if self.Ain is None:
-                print('initializing ...')
+                logging.debug('initializing ...')
                 if self.alpha_snmf is not None:
                     options['init_params']['alpha_snmf'] = self.alpha_snmf
 
@@ -485,21 +485,21 @@ class CNMF(object):
                 self.C = self.Cin
 
                 if self.remove_very_bad_comps:
-                    print('removing bad components : ')
+                    logging.info('removing bad components : ')
                     final_frate = 10
                     r_values_min = 0.5  # threshold on space consistency
                     fitness_min = -15  # threshold on time variability
                     fitness_delta_min = -15
                     Npeaks = 10
                     traces = np.array(self.C)
-                    print('estimating the quality...')
+                    logging.info('estimating the quality...')
                     idx_components, idx_components_bad, fitness_raw,\
                         fitness_delta, r_values = components_evaluation.estimate_components_quality(
                             traces, Y, self.A, self.C, self.b_in, self.f_in,
                             final_frate=final_frate, Npeaks=Npeaks, r_values_min=r_values_min,
                             fitness_min=fitness_min, fitness_delta_min=fitness_delta_min, return_all=True, N=5)
 
-                    print(('Keeping ' + str(len(idx_components)) +
+                    logging.info(('Keeping ' + str(len(idx_components)) +
                            ' and discarding  ' + str(len(idx_components_bad))))
                     self.C = self.C[idx_components]
                     self.A = self.A[:, idx_components]
@@ -513,38 +513,38 @@ class CNMF(object):
                     self.A, self.C, self.YrA, self.b, self.f, self.neurons_sn)
                 return self
 
-            print('update spatial ...')
+            logging.info('update spatial ...')
             A, b, Cin, self.f_in = update_spatial_components(Yr, C=self.Cin, f=self.f_in, b_in=self.b_in, A_in=self.Ain,
                                                              sn=sn, dview=self.dview, **options['spatial_params'])
 
-            print('update temporal ...')
+            logging.info('update temporal ...')
             if not self.skip_refinement:
                 # set this to zero for fast updating without deconvolution
                 options['temporal_params']['p'] = 0
             else:
                 options['temporal_params']['p'] = self.p
-            print('deconvolution ...')
+            logging.info('deconvolution ...')
             options['temporal_params']['method'] = self.method_deconvolution
 
             C, A, b, f, S, bl, c1, neurons_sn, g, YrA, lam = update_temporal_components(
                 Yr, A, b, Cin, self.f_in, dview=self.dview, **options['temporal_params'])
 
             if not self.skip_refinement:
-                print('refinement...')
+                logging.info('refinement...')
                 if self.do_merge:
-                    print('merge components ...')
+                    logging.info('merge components ...')
                     A, C, nr, merged_ROIs, S, bl, c1, sn1, g1 = merge_components(
                         Yr, A, b, C, f, S, sn, options[
                             'temporal_params'], options['spatial_params'],
                         dview=self.dview, bl=bl, c1=c1, sn=neurons_sn, g=g, thr=self.merge_thresh,
                         mx=50, fast_merge=True)
-                print((A.shape))
-                print('update spatial ...')
+                logging.debug((A.shape))
+                logging.info('update spatial ...')
                 A, b, C, f = update_spatial_components(
                     Yr, C=C, f=f, A_in=A, sn=sn, b_in=b, dview=self.dview, **options['spatial_params'])
                 # set it back to original value to perform full deconvolution
                 options['temporal_params']['p'] = self.p
-                print('update temporal ...')
+                logging.info('update temporal ...')
                 C, A, b, f, S, bl, c1, neurons_sn, g1, YrA, lam = update_temporal_components(
                     Yr, A, b, C, f, dview=self.dview, bl=None, c1=None, sn=None, g=None, **options['temporal_params'])
             else:
@@ -556,7 +556,7 @@ class CNMF(object):
         else:  # use patches
             if self.stride is None:
                 self.stride = np.int(self.rf * 2 * .1)
-                print(
+                logging.debug(
                     ('**** Setting the stride to 10% of 2*rf automatically:' + str(self.stride)))
 
             if type(images) is np.ndarray:
@@ -591,7 +591,7 @@ class CNMF(object):
 
             if self.center_psf:  # merge taking best neuron
                 if self.nb_patch > 0:
-                    print("merging")
+                    logging.info("merging")
                     merged_ROIs = [0]
                     while len(merged_ROIs) > 0:
                         A, C, nr, merged_ROIs, S, bl, c1, sn_n, g = merge_components(
@@ -599,7 +599,7 @@ class CNMF(object):
                             options['temporal_params'], options['spatial_params'],
                             dview=self.dview, thr=self.merge_thresh, mx=np.Inf, fast_merge=True)
 
-                    print("update temporal")
+                    logging.info("update temporal")
                     C, A, b, f, S, bl, c1, neurons_sn, g1, YrA, lam = update_temporal_components(
                         Yr, A, b, C, f, dview=self.dview, bl=None, c1=None, sn=None, g=None,
                         **options['temporal_params'])
@@ -607,17 +607,17 @@ class CNMF(object):
                     options['spatial_params']['se'] = np.ones(
                         (1,) * len(dims), dtype=np.uint8)
     #                options['spatial_params']['update_background_components'] = True
-                    print('update spatial ...')
+                    logging.info('update spatial ...')
                     A, b, C, f = update_spatial_components(
                         Yr, C=C, f=f, A_in=A, sn=sn, b_in=b, dview=self.dview,
                         **options['spatial_params'])
 
-                    print("update temporal")
+                    logging.info("update temporal")
                     C, A, b, f, S, bl, c1, neurons_sn, g1, YrA, lam = update_temporal_components(
                         Yr, A, b, C, f, dview=self.dview, bl=None, c1=None, sn=None, g=None,
                         **options['temporal_params'])
                 else:
-                    print("merging")
+                    logging.info("merging")
                     merged_ROIs = [0]
                     while len(merged_ROIs) > 0:
                         A, C, nr, merged_ROIs, S, bl, c1, neurons_sn, g1 = merge_components(
@@ -631,14 +631,14 @@ class CNMF(object):
                                                   np.array([YrA[m].mean(0) for m in merged_ROIs])])
             else:
 
-                print("merging")
+                logging.info("merging")
                 merged_ROIs = [0]
                 while len(merged_ROIs) > 0:
                     A, C, nr, merged_ROIs, S, bl, c1, sn_n, g = merge_components(Yr, A, [], np.array(C), [], np.array(
                         C), [], options['temporal_params'], options['spatial_params'], dview=self.dview,
                         thr=self.merge_thresh, mx=np.Inf)
 
-                print("update temporal")
+                logging.info("update temporal")
                 C, A, b, f, S, bl, c1, neurons_sn, g1, YrA, self.lam = update_temporal_components(
                     Yr, A, b, C, f, dview=self.dview, bl=None, c1=None, sn=None, g=None, **options['temporal_params'])
 
@@ -704,7 +704,7 @@ class CNMF(object):
             for ffrr in range(T):
                 tmp = cv2.resize(Yr[:, ffrr].reshape(
                     self.dims2, order='F'), new_dims[::-1])
-                print(tmp.shape)
+                logging.debug(tmp.shape)
                 new_Yr[:, ffrr] = tmp.reshape([np.prod(new_dims)], order='F')
             Yr = new_Yr
             A_new = scipy.sparse.csc_matrix(
@@ -784,7 +784,7 @@ class CNMF(object):
         self.noisyC = self.noisyC.astype(np.float32)
         self.CY = self.CY.astype(np.float32)
         self.CC = self.CC.astype(np.float32)
-        print('Expecting ' + str(self.expected_comps) + ' components')
+        logging.info('Expecting ' + str(self.expected_comps) + ' components')
         self.CY.resize([self.expected_comps + self.gnb, self.CY.shape[-1]])
         if use_dense:
             self.Ab_dense = np.zeros((self.CY.shape[-1], self.expected_comps + self.gnb),
@@ -876,7 +876,7 @@ class CNMF(object):
         Ab_ = self.Ab
         mbs = self.minibatch_shape
         frame = frame_in.astype(np.float32)
-#        print(np.max(1/scipy.sparse.linalg.norm(self.Ab,axis = 0)))
+#        logging.debug(np.max(1/scipy.sparse.linalg.norm(self.Ab,axis = 0)))
         self.Yr_buf.append(frame)
         if len(self.ind_new) > 0:
             self.mean_buff = self.Yres_buf.mean(0)
@@ -971,7 +971,7 @@ class CNMF(object):
                         self.Ab_dense = np.zeros((self.CY.shape[-1], self.expected_comps + nb_),
                                                  dtype=np.float32)
                         self.Ab_dense[:, :Ab_.shape[1]] = Ab_.toarray()
-                    print('Increasing number of expected components to:' +
+                    logging.info('Increasing number of expected components to:' +
                           str(self.expected_comps))
                 self.update_counter.resize(self.N)
                 self.AtA = (Ab_.T.dot(Ab_)).toarray()
@@ -1045,7 +1045,7 @@ class CNMF(object):
         # update shapes
         if True:  # False:  # bulk shape update
             if (t - self.initbatch) % mbs == mbs - 1:
-                print('Updating Shapes')
+                logging.info('Updating Shapes')
 
                 if self.N > self.max_comp_update_shape:
                     indicator_components = np.where(self.update_counter <=
@@ -1094,7 +1094,6 @@ class CNMF(object):
 
                     self.C_on = np.delete(self.C_on, ind_zero, axis=0)
                     self.AtY_buf = np.delete(self.AtY_buf, ind_zero, axis=0)
-                    print(1)
                     #import pdb
                     # pdb.set_trace()
                     #Ab_ = Ab_[:,ind_keep]
@@ -1886,7 +1885,7 @@ class CNMF(object):
                 init_batc_iter = [0] * (extra_files + init_files)
 
             for file_count, ffll in enumerate(process_files):
-                print('Now processing file ' + ffll)
+                logging.info('Now processing file ' + str(ffll))
                 Y_ = caiman.load(ffll, subindices=slice(
                                     init_batc_iter[file_count], None, None))
 
@@ -1896,7 +1895,7 @@ class CNMF(object):
                         raise Exception('Frame ' + str(frame_count) +
                                         ' contains NaN')
                     if t % 100 == 0:
-                        print('Epoch: ' + str(iter + 1) + '. ' + str(t) +
+                        logging.info('Epoch: ' + str(iter + 1) + '. ' + str(t) +
                               ' frames have beeen processed in total. ' +
                               str(self.N - old_comps) +
                               ' new components were added. Total # of components is '

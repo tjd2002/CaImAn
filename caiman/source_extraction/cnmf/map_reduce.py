@@ -101,9 +101,9 @@ def cnmf_patches(args_in):
 
     p = options['temporal_params']['p']
 
-    logger.debug(name_log+'START')
+    logger.debug(name_log + ': START')
 
-    logger.debug(name_log+'Read file')
+    logger.debug(name_log + ': Read file')
     Yr, dims, timesteps = load_memmap(file_name)
 
     # slicing array (takes the min and max index in n-dimensional space and cuts the box they define)
@@ -122,7 +122,7 @@ def cnmf_patches(args_in):
     else:
         images = images[slices]
 
-    logger.debug(name_log+'file loaded')
+    logger.debug(name_log + ': file loaded')
 
     if (np.sum(np.abs(np.diff(images.reshape(timesteps, -1).T)))) > 0.1:
 
