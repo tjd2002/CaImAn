@@ -188,7 +188,7 @@ def apply_to_patch(mmap_file, shape, dview, rf, stride, function, *args, **kwarg
 
         args_in.append((mmap_file.filename, id_f,
                         id_2d, function, args, kwargs))
-    logger.debug("Flat index is of length str(len(idx_flat)))
+    logger.debug("Flat index is of length " + str(len(idx_flat)))
     if dview is not None:
         try:
             file_res = dview.map_sync(function_place_holder, args_in)
