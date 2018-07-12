@@ -3,7 +3,7 @@
 """ compare how the elements behave
  
 We create a folder ground truth that possess the same thing than the other
-in a form of a dictionnary containing nparrays and other info.
+in a form of a dictionary containing nparrays and other info.
 the other files contains every test and the name is the date of the test
  
 See Also
@@ -25,18 +25,16 @@ Link
 #
 
 
-import platform as plt
 import copy
 import datetime
+import matplotlib.pyplot as pl
 import numpy as np
 import os
-######## ONLY IF ON TRAVIS ######
+import platform as plt
+import scipy
 
-#############################
-import matplotlib.pyplot as pl
 import caiman as cm
 from caiman.paths import caiman_datadir
-import scipy
 
 
 class Comparison(object):
