@@ -27,11 +27,21 @@ Link
 
 import copy
 import datetime
+import logging
 import matplotlib.pyplot as pl
 import numpy as np
 import os
 import platform as plt
 import scipy
+
+# Set up the logger; change this if you like.
+# You can log to a file using the filename parameter, or make the output more or less
+# verbose by setting level to logging.DEBUG, logging.INFO, logging.WARNING, or logging.ERROR
+
+logging.basicConfig(format=
+                          "%(relativeCreated)12d [%(filename)s:%(funcName)20s():%(lineno)s] [%(process)d] %(message)s",
+                    # filename="/tmp/caiman.log",
+                    level=logging.DEBUG)
 
 import caiman as cm
 from caiman.paths import caiman_datadir
@@ -212,7 +222,7 @@ class Comparison(object):
                 """
         # getting the DATA FOR COMPARISONS
         assert (params != None and self.cnmpatch != None)
-        print('we need the parameters in order to save anything\n')
+        logging.info('we need the parameters in order to save anything\n')
         # actions on the sparse matrix
         cnm = self.cnmpatch.__dict__
         cnmpatch = deletesparse(cnm)
@@ -250,12 +260,12 @@ class Comparison(object):
                 # we just save it
             if os._exists(file_path):
                 os.remove(file_path)
-                print("nothing to remove\n")
+                logging.debug("nothing to remove\n")
             np.savez(file_path, information=information, A_full=self.comparison['cnmf_full_frame']['ourdata'][0],
                      C_full=self.comparison['cnmf_full_frame']['ourdata'][
                          1], A_patch=self.comparison['cnmf_on_patch']['ourdata'][0],
                      C_patch=self.comparison['cnmf_on_patch']['ourdata'][1], rig_shifts=self.comparison['rig_shifts']['ourdata'])
-            print('we now have ground truth\n')
+            logging.info('we now have ground truth')
             return
 
         else:  # if not we create a comparison first
@@ -270,7 +280,7 @@ class Comparison(object):
             # if we cannot manage to open it or it doesnt exist:
             except (IOError, OSError):
                 # we save but we explain why there were a problem
-                print('we were not able to read the file ' + str(file_path) + ' to compare it\n')
+                logging.warning('we were not able to read the file ' + str(file_path) + ' to compare it\n')
                 file_path = os.path.join(caiman_datadir(), "testdata", "NC" + dt + ".npz")
                 np.savez(file_path, information=information, A_full=self.comparison['cnmf_full_frame']['ourdata'][0],
                          C_full=self.comparison['cnmf_full_frame']['ourdata'][
@@ -293,24 +303,24 @@ class Comparison(object):
             'params_cnm': False}})
         # INFORMATION FOR THE USER
         if data['processor'] != information['processor']:
-            print("you don't have the same processor as groundtruth.. the time difference can vary"
+            logging.info("you don't have the same processor as groundtruth.. the time difference can vary"
                   " because of that\n try recreate your own groundtruth before testing. Compare: " + str(data['processor']) + " to " + str(information['processor']) + "\n")
             information['differences']['proc'] = True
         if data['params'] != information['params']:
-            print("you are not using the same movie parameters... Things can go wrong\n\n")
-            print('you must use the same parameters to compare your version of the code with '
+            logging.warning("you are not using the same movie parameters... Things can go wrong")
+            logging.warning('you must use the same parameters to compare your version of the code with '
                   'the groundtruth one. look for the groundtruth parameters with the see() method\n')
             information['differences']['params_movie'] = True
         # We must cleanup some fields to permit an accurate comparison
         if not normalised_compare_cnmpatches(data['cnmpatch'], cnmpatch):
             if data['cnmpatch'].keys() != cnmpatch.keys():
-                print('DIFFERENCES IN THE FIELDS OF CNMF') # TODO: Now that we have deeply nested data structures, find a module that gives you tight differences.
+                logging.error('DIFFERENCES IN THE FIELDS OF CNMF') # TODO: Now that we have deeply nested data structures, find a module that gives you tight differences.
             diffkeys = [k for k in data['cnmpatch']
                         if data['cnmpatch'][k] != cnmpatch[k]]
             for k in diffkeys:
-                print(k, ':', data['cnmpatch'][k], '->', cnmpatch[k])
+                logging.info(k, ':', data['cnmpatch'][k], '->', cnmpatch[k])
 
-            print(
+            logging.warning(
                 'you are not using the same parameters in your cnmf on patches initialization\n')
             information['differences']['params_cnm'] = True
 
@@ -323,7 +333,7 @@ class Comparison(object):
             pl.gcf().savefig(dr + str(i) + '/' + 'rigidcorrection.pdf')
             pl.close()
         except:
-            print("\n")
+            pass
 
         # for cnmf on patch
         information['diff'].update({
@@ -339,7 +349,7 @@ class Comparison(object):
             pl.gcf().savefig(dr + i + '/' + 'onpatch.pdf')
             pl.close()
         except:
-            print("\n")
+            pass
 
 
 # CNMF FULL FRAME
@@ -356,7 +366,7 @@ class Comparison(object):
             pl.gcf().savefig(dr + i + '/' + 'cnmfull.pdf')
             pl.close()
         except:
-            print("\n")
+            pass
 
 # Saving of everything
         target_dir = os.path.join(caiman_datadir(), "testdata", i)
@@ -392,13 +402,14 @@ def see(filename=None):
         dr = os.path.join(caiman_datadir(), "testdata", "groundtruth.npz")
     else:
         dr = os.path.join(caiman_datadir(), "testdata", filename, filename + ".npz")
-        print(dr)
+        logging.debug("Loading GT file " + str(dr))
     with np.load(dr) as dt:
-        print('here is the info :\n')
+        print('Info :\n')
         see_it(dt)
 
 
 def see_it(data=None):
+    # FIXME Consider using json.dumps or pprint
     for key in data:
 
         val = data[key]
@@ -422,13 +433,11 @@ def deletesparse(cnm):
             val = deletesparse(val)
         if not isinstance(val, scipy.sparse.coo.coo_matrix) and not isinstance(val, np.ndarray) \
                 and not isinstance(val, scipy.sparse.csc.csc_matrix) and not keys == 'dview':
-            print(type(val))
+            logging.debug("type of val is " + str(type(val)))
             cnm[keys] = val
         else:
-
             cnm[keys] = None
     return cnm
-
 
 def cnmf(Cn, A_gt, A_test, C_gt, C_test, dims_gt, dims_test, dview=None, sensitivity=0, timer=0, n_frames_per_bin=10):
 
@@ -513,7 +522,7 @@ def plotrig(init, curr, timer, sensitivity):
         pl.xlabel('frames')
         pl.ylabel('pixels')
     except:
-        print("not able to plot")
+        logging.warning("not able to plot")
     return info
 
 def normalised_compare_cnmpatches(a, b):
